@@ -1,0 +1,138 @@
+.content{
+  margin: 0 20rpx;
+}
+.title{
+  font-size: 36rpx;
+  color: #383838;
+  font-weight:bold;
+  position: relative;
+  line-height: 38rpx;
+  letter-spacing: 2rpx;
+  margin-bottom: 35rpx;
+  margin-top: 60rpx;
+}
+.title::after{
+  content: "";
+  z-index: -1;
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width:120rpx;
+  height:20rpx;
+  background:linear-gradient(#CBCBCB,#DFDEDE);
+}
+.conditionBox{
+  margin: 0 25rpx;
+}
+.con_notes{
+  font-size: 26rpx;
+  color: #383838;
+  padding-top: 25rpx;
+}
+.con_main{
+  font-size: 22rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25rpx 0rpx;
+  border-bottom:1rpx solid #ddd;
+}
+.con_main>text:first-child{
+  color: #8A8A8A;
+}
+.go_release{
+  color: #383838;
+  position: relative;
+  top: 2rpx;
+}
+.moreImg{
+  width:20rpx;
+  height:20rpx;
+  margin-left: 10rpx;
+  position: relative;
+  top: 3rpx;
+}
+
+.data_item{
+  font-size: 26rpx;
+  color: #8A8A8A;
+  height: 98rpx;
+  line-height: 98rpx;
+  border-bottom: 1px solid #ddd;
+  margin: 0 23rpx 0 27rpx;
+}
+.data_item input{
+  width: 100%;
+  height: 100%;
+  line-height: 98rpx;
+}
+
+.title_upload::after{
+  content: "";
+  z-index: -1;
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width:155rpx;
+  height:20rpx;
+  background:linear-gradient(#CBCBCB,#DFDEDE);
+}
+.uploadBox{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.upload_li{
+  width:350rpx;
+  height:200rpx;
+  background:#F8F8F8;
+  border-radius:14rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #8A8A8A;
+  position: relative;
+}
+.upload_li .uploadImg{
+  width:64rpx;
+  height:52rpx;
+  margin-bottom: 20rpx;
+  margin-top: 48rpx;
+}
+.upload_bg{
+  width:350rpx;
+  height:200rpx;
+  border-radius:14rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.title_upload_two::after{
+  content: "";
+  z-index: -1;
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width:190rpx;
+  height:20rpx;
+  background:linear-gradient(#CBCBCB,#DFDEDE);
+}
+
+.submitBox{
+  text-align: center;
+  margin: 60rpx 0;
+
+}
+.submitBtn{
+  width:280rpx;
+  height:78rpx;
+  font-size: 32rpx;
+  line-height: 78rpx;
+  background:#000;
+  border-radius:39rpx;
+  color: #fff;
+}

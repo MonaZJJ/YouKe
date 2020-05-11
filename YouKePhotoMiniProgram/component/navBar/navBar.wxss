@@ -1,0 +1,28 @@
+/* 默认安卓非刘海屏 */
+.nav-bar {
+  width: 100%;
+  background-color: #ffffff;
+  padding-bottom: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.title {
+  width: 100%;
+  height: 32px;
+  display: block;
+  text-align: center;
+  line-height: 32px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.return-btn {
+  width: 25px;
+  height: 25px;
+  display: block;
+  position: absolute;
+  left: 10px;
+}

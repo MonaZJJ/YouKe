@@ -1,0 +1,40 @@
+<import src="../../wxParse/wxParse.wxml" />
+<container>
+  <navBar showReturn='{{true}}'>认证摄影师</navBar>
+  <view class="content">
+    <view class='messageBox'>
+     <template is="wxParse" data="{{wxParseData:attestation.nodes}}"/>
+      <!-- <view class='msg_li'>
+        <image src='/images/attestation/sign_bg.png' class='bgImg'></image>
+        <view class='li_text'>
+          <image src='/images/attestation/sign.png' class='iconImg'></image>
+          <text>独一无二标志，证明真身与荣耀</text>
+        </view>
+      </view>
+      <view class='msg_li'>
+        <image src='/images/attestation/priority_bg.png' class='bgImg'></image>
+        <view class='li_text'>
+          <image src='/images/attestation/priority.png' class='iconImg' style='width:50rpx;height:44rpx;'></image>
+          <text>优先参与手机摄影线上、线下活动</text>
+        </view>
+      </view>
+      <view class='msg_li'>
+        <image src='/images/attestation/rec_bg.png' class='bgImg'></image>
+        <view class='li_text'>
+          <image src='/images/attestation/rec.png' class='iconImg' style='width:43rpx;height:50rpx;'></image>
+          <text>优先推荐，更多曝光机会</text>
+        </view>
+      </view>
+      <view class='msg_li'>
+        <image src='/images/attestation/album_bg.png' class='bgImg'></image>
+        <view class='li_text'>
+          <image src='/images/attestation/album.png' class='iconImg' style='width:37rpx;height:50rpx;'></image>
+          <text>获得作品画册出版特权优先权</text>
+        </view>
+      </view> -->
+    </view>
+    <view class='loc_btm'>
+      <view class='applyBtn' bindtap='applyClick'>申请</view>
+    </view>
+  </view>
+</container>

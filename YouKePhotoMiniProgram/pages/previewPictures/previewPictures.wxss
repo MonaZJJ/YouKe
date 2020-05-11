@@ -1,0 +1,156 @@
+page{
+  height: 100%;
+}
+.backdrop{
+  height:100%;
+}
+image{
+  display: block;
+  width: 100%;
+}
+.imgBox{
+  border-radius: 14rpx;
+  overflow: hidden;
+  margin: 29rpx 20rpx 0rpx 20rpx;
+}
+.imgBox view{
+  overflow: hidden;
+}
+.box1,.box2,.box4,.box5,.box6,.box7,.box8,.box9{
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.box1 .img1, .box1 .img1>image{
+  width: 100%;
+  height:533rpx;
+}
+.box2 view, .box2 view>image{
+  width:350rpx;
+  height:450rpx;
+}
+.box2 .img1{
+  margin-right: 10rpx;
+}
+
+/* 三张图片特殊情况 */
+.box3.imgBox{
+  height: 450rpx;
+  flex-direction: column;
+  column-count:2;
+  column-gap: 10rpx;
+}
+.box3 view{
+  break-inside: avoid;
+}
+.box3 .img1{
+  width:350rpx;
+  height:220rpx;
+  margin-bottom: 10rpx;
+}
+.box3 .img2{
+  width:350rpx;
+  height:220rpx;
+}
+.box3 .img3{
+  width:350rpx;
+  height:450rpx;
+}
+.box3 .img3 image{
+  width:350rpx;
+  height:450rpx;
+}
+/* 四张图片 */
+.box4 view{
+  width:350rpx;
+  height:246rpx;
+}
+.box4 .img1,.box4 .img2{
+  margin-bottom: 10rpx;
+}
+/* 五张图片 */
+.box5 .img1,.box5 .img2{
+  width:350rpx;
+  height:246rpx;
+  margin-bottom: 10rpx;
+}
+.box5 .img3,.box5 .img4,.box5 .img5{
+  width:230rpx;
+  height:280rpx;
+}
+/* 六张图片 */
+.box6 view{
+  width:230rpx;
+  height:280rpx;
+}
+.box6 view:nth-child(-n+3){
+  margin-bottom: 10rpx;
+}
+/* 七张图片 */
+.box7 view{
+  width:230rpx;
+  height:280rpx;
+}
+.box7 view:first-child{
+  width: 100%;
+  height:246rpx;
+}
+.box7 view:nth-child(-n+4){
+  margin-bottom: 10rpx;
+}
+/* 八张图片 */
+.box8 view{
+  width:230rpx;
+  height:280rpx;
+}
+.box8 .img1,.box8 .img2{
+  width:350rpx;
+  height:246rpx;
+}
+.box8 view:nth-child(-n+5){
+  margin-bottom: 10rpx;
+}
+/* 九张图片 */
+.box9 view{
+  width:230rpx;
+  height:280rpx;
+}
+.box9 view:nth-child(-n+6){
+  margin-bottom: 10rpx;
+}
+
+.addOrDelete{
+  width:300rpx;
+  height:64rpx;
+  border:1px solid #383838;
+  border-radius:32rpx;
+  color: #383838;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 64rpx;
+  margin: 0 auto;
+  margin-top: 60rpx;
+}
+.remarksText{
+  color: #8A8A8A;
+  font-size: 24rpx;
+  text-align: center;
+  margin-top: 20rpx;
+}
+.nextStep{
+  position: fixed;
+  margin: auto;
+  left:0;
+  right:0;
+  bottom:40rpx;
+  width:280rpx;
+  height:78rpx;
+  line-height: 78rpx;
+  background:rgba(0,0,0,1);
+  border-radius:39rpx;
+  color: #fff;
+  text-align: center;
+  font-size: 32rpx;
+}

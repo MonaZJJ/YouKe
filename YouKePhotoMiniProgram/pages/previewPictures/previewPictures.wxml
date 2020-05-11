@@ -1,0 +1,21 @@
+<view class="backdrop" style='{{isStopBodyScroll?"":"overflow-y: hidden;"}}'>
+  <container>
+    <navBar showReturn='{{true}}'>预览</navBar>
+    <view class="content">
+
+      <view class='imgBox {{imgClassName}}' wx:if="{{ImgNum != 0}}">
+
+        <block wx:for="{{ImgList}}" wx:for-index="index" wx:for-item="item" wx:key="">
+          <view class='imgView img{{index + 1}}'>
+            <image src='{{item}}' mode='aspectFill' style='{{imgIndex == index ? "position: absolute;width: 230rpx;height: 280rpx;opacity:0.5;"+topAndLeft:""}}' data-index='{{index}}' data-src='{{item}}' bindtouchmove="imagetouchmove" bindtouchend="imagetouchend" bindlongtap="longTap"></image>
+          </view>
+        </block>
+
+      </view>
+
+      <view class='addOrDelete' bindtap='addImgClick'>添加作品</view>
+      <view class='remarksText'>拖动图片可调整图片位置，长按图片即可删除</view>
+      <view class='nextStep' bindtap='nextStepClick'>下一步</view>
+    </view>
+  </container>
+</view>

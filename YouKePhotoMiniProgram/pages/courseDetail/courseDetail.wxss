@@ -1,0 +1,228 @@
+@import "../templates/comment-itemTpl/comment-itemTpl.wxss";
+
+.content {
+  padding-bottom: 118rpx;
+}
+.video-box {
+  height: 400rpx;
+}
+.video-box video {
+  width: 100%;
+  height: 400rpx;
+  background-color: #c4c4c4;
+  position: fixed;
+  left: 0;
+  z-index: 222;
+}
+
+.text-box {
+  padding: 0 20rpx;
+  margin-top: 30rpx;
+}
+
+.text-top {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+.text-title {
+  width: 450rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 1);
+  line-height: 40rpx;
+}
+
+.text-title > text {
+  color: #ccc;
+}
+
+.share-box {
+  margin-right: 40rpx;
+  -webkit-align-self: center;
+  align-self: center;
+  position: relative;
+}
+
+.share-box > image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.text-bot {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #555;
+  line-height: 33rpx;
+  margin-top: 20rpx;
+  padding-bottom: 35rpx;
+}
+
+.recommend-box {
+  padding: 0 20rpx;
+  margin-top: 10rpx;
+}
+
+.ranking-title > text {
+  line-height: 53rpx;
+  font-size: 38rpx;
+  color: #383838;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+
+.ranking-title > text::after {
+  width: 120rpx;
+  height: 20rpx;
+  background: linear-gradient(270deg, rgba(223, 222, 222, 1) 0%, rgba(203, 203, 203, 1) 100%);
+  position: absolute;
+  left: 0;
+  bottom: 6rpx;
+  content: '';
+  z-index: -99;
+}
+
+.recommend-list {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  margin-top: 28rpx;
+}
+
+.recommend-item > image {
+  width: 345rpx;
+  height: 146rpx;
+  display: block;
+  border-radius: 14rpx;
+}
+
+.recommend-item > view {
+  height: 30rpx;
+  font-size: 22rpx;
+  font-family: PingFangSC-Semibold;
+  font-weight: 600;
+  color: #383838;
+  line-height: 30rpx;
+  overflow: hidden;
+  margin-top: 10rpx;
+}
+
+.recommend-item > text {
+  display: block;
+  height: 28rpx;
+  font-size: 20rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(204, 204, 204, 1);
+  line-height: 28rpx;
+  overflow: hidden;
+  margin-top: 4rpx;
+}
+
+.message-box {
+  padding: 0 20rpx;
+  margin-top: 22rpx;
+}
+
+.message-list {
+  margin-top: 40rpx;
+}
+
+.footer-box {
+  width: 100%;
+  background-color: #fff;
+  padding: 16rpx 20rpx;
+  box-sizing: border-box;
+  border-top: 2rpx solid rgba(0, 0, 0, 0.1);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+.textarea-box {
+  width: 550rpx;
+  min-height: 62rpx;
+  border-radius: 32rpx;
+  background-color: #eee;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  position: relative;
+}
+
+.textarea-bg {
+  width: 100%;
+  height: 100%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.textarea-bg > image {
+  width: 35rpx;
+  height: 27rpx;
+}
+
+.textarea-bg > text {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(56, 56, 56, 1);
+  line-height: 33rpx;
+  margin-left: 20rpx;
+}
+
+.textarea-box > textarea {
+  width: 550rpx;
+  line-height: 32rpx;
+  font-size: 24rpx;
+  padding: 5rpx;
+  box-sizing: border-box;
+  padding-top: 0;
+}
+
+.btn-box {
+  position: absolute;
+  right: 34rpx;
+  bottom: 30rpx;
+}
+
+.btn-box > image {
+  width: 40rpx;
+  height: 40rpx;
+  float: left;
+}
+
+.footer-share {
+  float: left;
+  margin-left: 35rpx;
+  position: relative;
+}
+
+.footer-share > image {
+  width: 38rpx;
+  height: 38rpx;
+  display: block;
+}
+
+.share-btn {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}

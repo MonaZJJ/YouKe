@@ -1,0 +1,103 @@
+<container>
+  <navBar showReturn='{{true}}'>排行榜</navBar>
+  <view class="content">
+    <!-- 今日 -->
+    <view class='list_box'>
+      <view class='box_top box_top_first'>
+        <view><text class='time'>{{todayData}}</text>今日</view>
+        <view catchtap='questionBtn'><image src='../../images/rankingList/question.png' class='quesImg'></image></view>
+      </view>
+      <!-- 列表 -->
+      <view>
+        <block wx:for="{{todayBoxList}}" wx:for-index="index" wx:for-item="item" wx:key="">
+          <view class='list_item'>
+            <view class='list_img_box'>
+              <image src='../../images/index/gou.png' class='itemGouImg' wx:if="{{item.Authentication}}"></image>
+              <image class='itemImg' src='{{item.Avatar}}' data-uid='{{item.UId}}' catchtap='goPersonPage'></image>
+            </view>
+            <view class='itemInfo'>
+              <view class='info_top'>
+                <text class='info_name'>{{item.NickName}}</text>
+                <view wx:if="{{index==0}}">
+                  <image src='/images/rankingList/gold.png' class='topImg'></image>
+                  <text class='topNum topNum_first'>TOP 1</text>
+                </view>
+                <view wx:elif="{{index==1}}">
+                  <image src='/images/rankingList/silver.png' class='topImg'></image>
+                  <text class='topNum'>TOP 2</text>
+                </view>
+                <view wx:elif="{{index==2}}">
+                  <image src='/images/rankingList/copper.png' class='topImg'></image>
+                  <text class='topNum'>TOP 3</text>
+                </view>
+                <view wx:else>
+                  <text class='topNum'>TOP {{index+1}}</text>
+                </view>
+              </view>
+              <view class='info_btm'>
+                <text wx:if="{{item.Authentication}}">已认证摄影师</text>
+                <text wx:else>未认证摄影师</text>
+                <text class='votes'>{{item.LikeCount}}</text>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+      <!-- 列表 end-->
+    </view>
+
+    <!-- 其他日期 -->
+    <block wx:for="{{bigBoxList}}" wx:for-item="bitem" wx:key="">
+      <view class='list_box'>
+        <view class='box_top'>
+          <text class='time'>{{bitem.dateText}}</text>
+        </view>
+        <!-- 列表 -->
+        <view>
+          <block wx:for="{{bitem.List}}" wx:for-index="index" wx:for-item="item" wx:key="">
+            <view class='list_item'>
+              <view class='list_img_box'>
+                <image src='../../images/index/gou.png' class='itemGouImg' wx:if="{{item.Authentication}}"></image>
+                <image class='itemImg' src='{{item.Avatar}}' data-uid='{{item.UId}}' catchtap='goPersonPage'></image>
+              </view>
+              <view class='itemInfo'>
+                <view class='info_top'>
+                  <text class='info_name'>{{item.NickName}}</text>
+                  <view wx:if="{{index==0}}">
+                    <image src='/images/rankingList/gold.png' class='topImg'></image>
+                    <text class='topNum topNum_first'>TOP 1</text>
+                  </view>
+                  <view wx:elif="{{index==1}}">
+                    <image src='/images/rankingList/silver.png' class='topImg'></image>
+                    <text class='topNum'>TOP 2</text>
+                  </view>
+                  <view wx:elif="{{index==2}}">
+                    <image src='/images/rankingList/copper.png' class='topImg'></image>
+                    <text class='topNum'>TOP 3</text>
+                  </view>
+                  <view wx:else>
+                    <text class='topNum'>TOP {{index+1}}</text>
+                  </view>
+                </view>
+                <view class='info_btm'>
+                  <text wx:if="{{item.Authentication}}">已认证摄影师</text>
+                  <text wx:else>未认证摄影师</text>
+                  <text class='votes'>{{item.LikeCount}}</text>
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+        <!-- 列表 end-->
+      </view>
+    </block>
+
+    <!-- 问题弹窗 -->
+    <showModal id="showModal" bg-show="true">
+      <view class='conArea'>
+        <view class='con_quesTitle'>规则说明</view>
+        <view class='con_quesCon'>{{Rankingrules}}</view>
+      </view>
+    </showModal>
+  </view>
+</container>

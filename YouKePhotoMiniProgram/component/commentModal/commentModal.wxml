@@ -1,0 +1,10 @@
+<!-- 遮罩层 -->
+<view class='mask' wx:if="{{show}}" bindtap="hideModal" catchtouchmove="holdPositon"></view>
+<!-- 评论弹窗 -->
+<view class='com_madol' wx:if="{{show}}" catchtouchmove="holdPositon" style='bottom: {{keyboardHeight}}'>
+  <textarea fixed="{{true}}" adjust-position='{{false}}' show-confirm-bar="{{true}}" maxlength='150' placeholder='写评论......' bindinput="changeTextareaEvent" bindfocus='focusEvent' bindblur='blurEvent'></textarea>
+  <view class='com_madol_btm'>
+    <view>还可输入{{surplusNum}}个字</view>
+    <view class='modal_sendOut' data-wid='{{wid}}' data-uid='{{uid}}' bindtap="sendOutEvent">发送</view>
+  </view>
+</view>

@@ -1,0 +1,217 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.5.0",
+	"appid": "wx6dde12ae9dfe986d",
+	"projectname": "%E4%BC%98%E5%AE%A2%E6%91%84%E5%BD%B1",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"scripts": {},
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 3,
+			"list": [
+				{
+					"id": 0,
+					"name": "我的",
+					"pathName": "pages/member/member",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的粉丝",
+					"pathName": "pages/fans/fans",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": "排行榜详情",
+					"pathName": "pages/rankingList/rankingList",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": "比赛",
+					"pathName": "pages/match/match",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "认证摄影师",
+					"pathName": "pages/attestation/attestation",
+					"query": ""
+				},
+				{
+					"id": 6,
+					"name": "认证摄影师-2",
+					"pathName": "pages/attestationNext/attestationNext",
+					"query": ""
+				},
+				{
+					"id": 6,
+					"name": "上传作品",
+					"pathName": "pages/uploadWorks/uploadWorks",
+					"query": ""
+				},
+				{
+					"id": 7,
+					"name": "上传比赛作品",
+					"pathName": "pages/uploadMatchWorks/uploadMatchWorks",
+					"query": "aid=50",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "预览图片",
+					"pathName": "pages/previewPictures/previewPictures",
+					"query": ""
+				},
+				{
+					"id": 10,
+					"name": "个人信息",
+					"pathName": "pages/personInfo/personInfo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "关注",
+					"pathName": "pages/concern/concern",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的粉丝",
+					"pathName": "pages/fans/fans",
+					"query": ""
+				},
+				{
+					"id": 13,
+					"name": "我的比赛",
+					"pathName": "pages/contest/contest",
+					"query": ""
+				},
+				{
+					"id": 14,
+					"name": "我的收藏",
+					"pathName": "pages/collect/collect",
+					"query": ""
+				},
+				{
+					"id": 15,
+					"name": "我的评论",
+					"pathName": "pages/comment/comment",
+					"query": ""
+				},
+				{
+					"id": 16,
+					"name": "我的消息",
+					"pathName": "pages/message/message",
+					"query": ""
+				},
+				{
+					"id": 16,
+					"name": "作品放大图",
+					"pathName": "pages/preview/preview",
+					"query": ""
+				},
+				{
+					"id": 17,
+					"name": "教程详情页",
+					"pathName": "pages/courseDetail/courseDetail",
+					"query": "tuid=36",
+					"scene": null
+				},
+				{
+					"id": 18,
+					"name": "活动详情",
+					"pathName": "pages/activityDetails/activityDetails",
+					"query": "aid=23"
+				},
+				{
+					"id": 19,
+					"name": "获奖作品",
+					"pathName": "pages/winningList/winningList",
+					"query": "aid=14"
+				},
+				{
+					"id": 20,
+					"name": "作品标签页",
+					"pathName": "pages/signWorks/signWorks",
+					"query": "tid=27"
+				},
+				{
+					"id": 22,
+					"name": "作品详情",
+					"pathName": "pages/worksDetail/worksDetail",
+					"query": "wid=4"
+				},
+				{
+					"id": 22,
+					"name": "个人主页",
+					"pathName": "pages/personPage/personPage",
+					"query": "uid=24"
+				},
+				{
+					"id": -1,
+					"name": "我的作品",
+					"pathName": "pages/myWorks/myWorks",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "作品收藏",
+					"pathName": "pages/worksCollect/worksCollect",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "登录",
+					"pathName": "pages/login/login",
+					"query": ""
+				},
+				{
+					"id": 26,
+					"name": "获奖情况",
+					"pathName": "pages/personWinning/personWinning",
+					"query": "uid=24"
+				},
+				{
+					"id": -1,
+					"name": "个人作品",
+					"pathName": "pages/personWorks/personWorks",
+					"query": "uid=24"
+				}
+			]
+		}
+	}
+}

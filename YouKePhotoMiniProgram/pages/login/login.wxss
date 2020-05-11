@@ -1,0 +1,67 @@
+/* pages/wxLogin/wxLogin.wxss */
+
+page {
+  background-color: #fff;
+}
+.container {
+  border-top:1px solid #ddd; 
+}
+.login {
+  padding-top: 240rpx;
+  text-align: center;
+}
+
+.wx-Login {
+  font-size: 24rpx;
+  color: #aaa;
+}
+
+.wx-Login:before {
+  display: inline-block;
+  position: relative;
+  top: -7rpx;
+  right: 10rpx;
+  content: "";
+  width: 229rpx;
+  height: 0px;
+  border: 1rpx solid #aaa;
+}
+
+.wx-Login:after {
+  display: inline-block;
+  position: relative;
+  top: -7rpx;
+  left: 10rpx;
+  content: "";
+  width: 229rpx;
+  height: 0px;
+  border: 1rpx solid #aaa; 
+}
+.wx-login{
+  width: 700rpx;
+  height: 90rpx;
+  border: 1rpx solid #dcdcdc;
+  margin: 0 auto;
+  margin-top: 15%;
+  border-radius: 12rpx;
+  background-color: #2aa33b;
+}
+.wx-login{
+  height: 90rpx;
+  text-align: center;
+}
+.wx-login image{
+  width: 59rpx;
+  height: 48rpx;
+  margin-top: 22rpx;
+ 
+}
+.wx-login text{
+  display: inline-block;
+  vertical-align: top;
+  height: 90rpx;
+  line-height: 90rpx;
+  margin-left: 18rpx;
+  color: #ffffff;
+  font-size: 26rpx;
+}

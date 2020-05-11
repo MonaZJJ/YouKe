@@ -1,0 +1,64 @@
+/* 个人信息样式*/
+
+.common {
+  width: 684rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #ddd;
+  margin: 0 33rpx;
+  padding-right: 18rpx;
+}
+
+.desc {
+  font-size: 28rpx;
+  color: #383838;
+  white-space: nowrap;
+}
+
+.first {
+  height: 140rpx;
+}
+
+.second {
+  height: 118rpx;
+}
+
+.nickName {
+  font-size: 32rpx;
+  color: #383838;
+  width: 550rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: right;
+}
+
+
+.third {
+  height: 119rpx;
+}
+
+.intro {
+  font-size: 28rpx;
+  color: #383838;
+  width: 550rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: right;
+}
+
+.save {
+  margin-top: 688rpx;
+  margin-bottom: 60rpx;
+}
+
+.button {
+  width: 280rpx;
+  height: 78rpx;
+  border-radius: 39rpx;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  font-size: 32rpx;
+}

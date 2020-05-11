@@ -1,0 +1,192 @@
+.content {
+  padding: 0rpx 20rpx 45rpx 20rpx;
+  color: #383838;
+}
+
+.nickName {
+  max-width: 220rpx;
+  margin-right: 20rpx;
+  font-size: 26rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.prizeSign {
+  margin-top: 60rpx;
+  font-size: 38rpx;
+  font-weight: bold;
+  position: relative;
+}
+
+.prizeSign::after {
+  content: "";
+  position: absolute;
+  bottom: 3rpx;
+  left: 0;
+  z-index: -1;
+  width: 88rpx;
+  height: 20rpx;
+  background:linear-gradient(90deg,rgba(255,233,208,1) 0%,rgba(244,241,228,1) 100%,rgba(255,233,208,1) 100%,rgba(244,241,228,1) 100%);
+}
+
+.prizeItem {
+  margin-top: 60rpx;
+}
+
+.pItem_top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pItem_top>view {
+  font-size: 26rpx;
+  color: #383838;
+  display: flex;
+  align-items: center;
+}
+.pItem_topAvatarBox{
+  position: relative;
+  width: 84rpx;
+  height: 84rpx;
+  margin-right: 11rpx;
+}
+.pItemGouImg{
+  position: absolute;
+  z-index: 4;
+  width: 23rpx;
+  height: 23rpx;
+  right: 8rpx;
+  bottom: 5rpx;
+}
+.sitemHead {
+  width: 84rpx;
+  height: 84rpx;
+  border-radius: 50%;
+}
+
+.follow {
+  width: 110rpx;
+  height: 36rpx;
+  border: 2rpx solid #383838;
+  border-radius: 18rpx;
+  font-size: 24rpx;
+  text-align: center;
+}
+.gray_bg {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100rpx;
+  height: 59rpx;
+  /* background: rgba(163, 163, 163, 0.6); */
+  border-radius: 30rpx;
+  color: #fff;
+}
+
+.grayBg_first {
+  margin-right: 16rpx;
+}
+
+.gray_bg:first-child {
+  margin-right: 16rpx;
+}
+
+.gray_bg>image {
+  margin-left: 10rpx;
+}
+
+.gray_bg>text {
+  margin-right: 10rpx;
+}
+
+.pItem_mid {
+  width: 100%;
+  border-radius: 14rpx;
+  overflow: hidden;
+  margin: 10rpx 0rpx 30rpx 0rpx;
+}
+
+.sitemImg {
+  width: 100%;
+  vertical-align: top;
+}
+
+.pItem_btm {
+  color: #383838;
+}
+
+.pItem_btm_left {
+  width: 100%;
+}
+.pItem_sign{
+  display: inline-flex;
+}
+.pItem_btm_left>view:first-child {
+  font-size: 36rpx;
+}
+
+.pItem_btm_left>view:nth-child(2) {
+  font-size: 26rpx;
+  color: #828282;
+  margin: 12rpx 0rpx 16rpx 0rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.phoneName {
+  font-size: 22rpx;
+  color: #828282;
+}
+
+.pItem_signList {
+  font-size: 22rpx;
+  color: #828282;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.scrollBox {
+  width: auto;
+  height: 45rpx;
+}
+
+.pItem_sLitem {
+  display: inline-block;
+  margin-right: 10rpx;
+  padding: 0 20rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  border: 1px solid #8f8f8f;
+  border-radius: 20rpx;
+  text-align: center;
+}
+.loveImg {
+  width: 40rpx;
+  height: 36rpx;
+}
+/* .pItem_btm_right{
+  width: 21%;
+  text-align: center;
+}
+.pItem_btm_right>view:first-child{
+  font-size:48rpx;
+  font-weight:bold;
+  line-height: 48rpx;
+}
+.pItem_btm_right>view:nth-child(2){
+  font-size:24rpx;
+  margin: 15rpx 0rpx 16rpx 0rpx;
+}
+.scoringBtn{
+  width:128rpx;
+  height:41rpx;
+  border:2px solid rgba(56,56,56,1);
+  border-radius:21rpx;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 41rpx;
+} */

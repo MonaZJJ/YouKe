@@ -1,0 +1,110 @@
+<!-- 作品列表（有跳转作品详情，跳转作品预览，关注，点赞，评论，打分，头像跳转个人主页功能） 首页，活动详情(无关注)，个人主页（无关注，无收藏），我的作品（无关注，无收藏），作品收藏（无关注）-->
+<view>
+  <block wx:for='{{workList}}' wx:key="">
+    <view class='concern-item'>
+      <navigator url='/pages/worksDetail/worksDetail?wid={{item.WorkId}}' hover-class='none'>
+        <!-- 头部 -->
+        <view class='concern_top'>
+          <view>
+            <view class='avatar_box'>
+              <image src='../../images/index/gou.png' class='itemGouImg' wx:if="{{item.Authentication}}"></image>
+              <image lazy-load='true' src='{{item.Avatar}}' data-uid='{{item.UId}}' catchtap='goPersonPage' class='sitemHead' wx:if="{{ifAvatarSrc}}"></image>
+              <image lazy-load='true' src='{{item.Avatar}}' data-uid='{{item.UId}}' catchtap='goPersonPageNo' class='sitemHead' wx:else></image>
+            </view>
+            <text class='concern_top_name'>{{item.NickName}}</text>
+            <view wx:if="{{ifConcernBtn && userUid != item.UId}}">
+              <!-- <view catchtap='cancelConcernClick' data-uid='{{item.UId}}' data-wid='{{item.WorkId}}' class='con_followBtn' wx:if="{{item.IsFollow}}">已关注</view> -->
+              <view catchtap='concernClick' data-uid='{{item.UId}}' data-wid='{{item.WorkId}}' class='con_followBtn' wx:if="{{!item.IsFollow}}">+ 关注</view>
+            </view>
+          </view>
+          <view wx:if="{{!ifShowPrizeName}}">
+            <view class='gray_bg grayBg_first' data-wid='{{item.WorkId}}' catchtap='cancelCollectClick' wx:if="{{ifCancelCollectBtn}}">
+              <image lazy-load='true' src='../../images/index/star.png' class='whiteLoveImg'></image>
+              <text>已收藏</text>
+            </view>
+            <view class='gray_bg grayBg_first' data-wid='{{item.WorkId}}' data-uid='{{item.UId}}' catchtap='commentModalClcik' wx:if="{{ifCommentBtn}}">
+              <image lazy-load='true' src='../../images/index/evaluate.png' class='evaluateImg'></image>
+              <text>{{item.CommentCount}}</text>
+            </view>
+            <view class='gray_bg' data-wid='{{item.WorkId}}' data-like='{{item.IsLike}}' catchtap='likesBtnClick'>
+              <image lazy-load='true' src='../../images/personPage/selected.png' class='loveImg' wx:if="{{item.IsLike}}"></image>
+              <image lazy-load='true' src='../../images/index/love_new.png' class='loveImg' wx:else></image>
+              <text style="{{item.IsLike?'color:#383838;':''}}">{{item.LikeCount}}</text>
+            </view>
+          </view>
+          <view wx:if="{{ifShowPrizeName}}" class='prizeName'>
+            <image src='../../images/match/first.png' class='prizeNameImg' wx:if="{{index==0}}"></image>
+            <image src='../../images/match/second.png' class='prizeNameImg' wx:if="{{index==1}}"></image>
+            <image src='../../images/match/third.png' class='prizeNameImg' wx:if="{{index==2}}"></image>
+            <text>{{item.PrizeName}}</text>
+          </view>
+        </view>
+
+        <!-- 中间图片-一张图片时高度自适应 -->
+        <view class='img-list {{item.className}}' wx:if="{{imgFirstWidthFix}}">
+          <block wx:for="{{item.ImgList}}" wx:for-index="subIndex" wx:for-item="subItem" wx:key="">
+            <view class='imgView img{{subIndex+1}}'>
+              <image lazy-load='true' src='{{subItem.SimpleImgUrl}}' mode='widthFix' data-idx='{{subIndex}}' data-wid='{{item.WorkId}}' catchtap='goPreview' wx:if='{{item.className == "item-1"}}'></image>
+              <image lazy-load='true' src='{{subItem.SimpleImgUrl}}' mode='aspectFill' data-idx='{{subIndex}}' data-wid='{{item.WorkId}}' catchtap='goPreview' wx:else></image>
+            </view>
+          </block>
+        </view>
+
+        <!-- 中间图片-一张图片时高度533 -->
+        <view class='img-list {{item.className}}' wx:else>
+          <block wx:for="{{item.ImgList}}" wx:for-index="subIndex" wx:for-item="subItem" wx:key="">
+            <view class='imgView img{{subIndex+1}}'>
+              <image lazy-load='true' src='{{subItem.SimpleImgUrl}}' mode='aspectFill' data-wid='{{item.WorkId}}' data-idx='{{subIndex}}' catchtap='goPreview' style='{{item.className == "item-1"?"height: 533rpx;":""}}'></image>
+            </view>
+          </block>
+        </view>
+        
+        <!-- 底部 -->
+        <view class='concern-bottom'>
+          <view class='concern-btm_left'>
+            <view>{{item.Title}}</view>
+            <view>{{item.Desc}}</view>
+            <view class='concern-btm_signList' wx:if="{{!(item.AId>0)&&item.PhoneModel != null&&item.PhoneModel != ''}}">
+              <scroll-view class='concern-btm_scroll' scroll-x>
+                <view class='concern-btm_sLitem' data-tid='{{item.PhoneModel.ModelId}}' data-pname="{{item.PhoneModel.Name}}" catchtap='goPhoneModel'>
+                  #{{item.PhoneModel.Name}}
+                </view>
+                <block wx:for="{{item.TabList}}" wx:key="" wx:for-index="tagIndex" wx:for-item="tagItem">
+                  <view class='concern-btm_sLitem' data-tid='{{tagItem.TabId}}' catchtap='goSignWorks'>
+                    #{{tagItem.TabName}}
+                  </view>
+                </block>
+              </scroll-view>
+            </view>
+          </view>
+          <view class='concern-btm_right' wx:if="{{!(item.AId>0)&&ifScoringArea}}">
+            <view>{{item.AvgScore}}</view>
+            <view>分 | {{item.GradesCount}}人</view>
+            <view class='alyScoringBtn' catchtap='alyScoring' wx:if="{{item.IsGrade}}">已打分</view>
+            <view data-wid='{{item.WorkId}}' class='scoringBtn' catchtap='showSliderLayer' wx:else>我要打分</view>
+          </view>
+        </view>
+
+      </navigator>
+    </view>
+  </block>
+
+  <view class='layer-box' bindtap='hideSliderLayer' catchtouchmove='contentTap' wx:if='{{showSlider}}'>
+    <view class='layer-content' catchtap='contentTap'>
+      <image lazy-load='true' src='../../images/index/score-bg.png'></image>
+      <view class='slide-box'>
+        <view class='canvas-box'>
+          <canvas canvas-id='scoreCanvas'></canvas>
+        </view>
+        <view class='custom-slider'>
+          <view class='slider-line'>
+            <view style='width: {{rightWidth}}rpx'></view>
+          </view>
+          <image class='slider-block' src='../../images/circle.png' style='left: {{blockLeft}}rpx'></image>
+          <slider value='{{score}}' backgroundColor='{{slider.backgroundColor}}' block-color='{{slider.blockColor}}' block-size='{{slider.size}}' bindchange="sliderChange" bindchanging="sliderChange"/>
+        </view>
+      </view>
+      <view class='sure-btn' catchtap='scoreConfirm'>确认打分</view>
+    </view>
+  </view>
+</view>

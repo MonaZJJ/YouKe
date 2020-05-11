@@ -1,0 +1,7 @@
+<view class='nav-bar' style='padding-top: {{statusBarHeight}}px'>
+  <image class='return-btn' style='top: {{statusBarHeight + 3}}px' src='../../images/return.png' wx:if='{{showReturn}}' bindtap='returnPrePage'></image>
+  <view class='title'>
+    <slot>
+    </slot>
+  </view>
+</view>

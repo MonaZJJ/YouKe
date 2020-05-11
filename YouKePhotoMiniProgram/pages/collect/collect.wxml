@@ -1,0 +1,24 @@
+<!--我的收藏页面-->
+<container>
+  <navBar showReturn='{{true}}'>我的收藏</navBar>
+  <view class='container'>
+    <navigator class='collect' hover-class='none' url='/pages/worksCollect/worksCollect'>
+      <view class='desc'>作品</view>
+      <view class=' common works'>
+        <image src='/images/member/back.png' style='width:30rpx;height:30rpx;'></image>
+      </view>
+    </navigator>
+    <navigator class='collect' hover-class='none' url='/pages/contestCollect/contestCollect'>
+      <view class='desc'>比赛</view>
+      <view class='common contest'>
+        <image src='/images/member/back.png' style='width:30rpx;height:30rpx;'></image>
+      </view>
+    </navigator>
+    <navigator class='collect' hover-class='none' url='/pages/courseCollect/courseCollect'>
+      <view class='desc'>教程</view>
+      <view class='common teach'>
+        <image src='/images/member/back.png' style='width:30rpx;height:30rpx;'></image>
+      </view>
+    </navigator>
+  </view>
+</container>

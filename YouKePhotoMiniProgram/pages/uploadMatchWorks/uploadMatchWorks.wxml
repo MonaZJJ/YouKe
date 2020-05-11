@@ -1,0 +1,75 @@
+<import src="../../wxParse/wxParse.wxml" />
+<container>
+  <navBar showReturn='{{true}}'>作品上传</navBar>
+  <view class="content">
+    <view class='reminder'>温馨提示：{{reminder}}</view>
+    <view class="main">
+      <form bindsubmit="formRelease">
+        <view class='title'>
+          <input placeholder='作品主题' name="Title" maxlength="20"></input>
+        </view>
+        <view class='textarea'>
+          <!-- 真正的textarea -->
+          <textarea class='editContent' name="ContentText" minlength="1" maxlength="80" placeholder='作品说明...' value="{{txtRealContent}}" bindinput='txtInput' wx:if="{{!show}}" />
+          <!-- textarea的替代元素 -->
+          <view class='rich-text' wx:else>{{txtRealContent}}</view>
+        </view>
+
+        <!-- 上传图片按钮 -->
+        <view class='uploadBox'>
+          <view class='item' bindtap='addImgClick'>
+            <image src='{{ImgUrl}}' mode='aspectFill' class='showImg' wx:if="{{isImgShow}}"></image>
+            <image src='/images/match/add.png' class='addImgBtn' wx:else></image>
+          </view>
+        </view>
+
+        <view class='choiceBox'>
+          <view class='choice_item' bindtap='groupingSelect' wx:if="{{hasTabList}}">
+            <view>
+              <text>分组选择</text>
+              <image src='/images/attestation/more.png' class='moreImg'></image>
+            </view>
+            <view class='choice_item_view' style="">
+              <block wx:for="{{tabListSelect}}" wx:key="">
+                <text>{{item.GroupName}}</text>
+              </block>
+            </view>
+          </view>
+          <block wx:for="{{ActivityField}}" wx:for-index="findex" wx:key="">
+            <view class='choice_item'>
+              <input placeholder='请输入{{item.Name}}' data-index='{{findex}}' bindinput='changeIndexValue' class='inputMobile {{item.Required==1?"required":""}}' type='text'></input>
+            </view>
+          </block>
+          <view class='agreeBox'>
+            <checkbox-group bindchange="checkboxChange">
+              <checkbox checked='{{checked}}' class='checkbox' />已阅读
+            </checkbox-group>
+            <view style='color:#0D9BFF;' catchtap='userAgreement'>《参赛须知》</view>
+          </view>
+        </view>
+
+        <view class='releaseBox'>
+          <button formType="submit" class='releaseBtn'>发布作品</button>
+        </view>
+      </form>
+
+
+      <showModal id="showModal" bind:confirmEvent="_confirmEvent" bind:hideModal="hideModal" padding-top="{{paddingTop}}">
+        <!-- 分组标签 -->
+        <view class='modalArea' wx:if="{{type == 0}}">
+          <block wx:for="{{tabList}}" wx:for-index="tindex" wx:for-item="titem" wx:key="">
+            <view class="select_item {{groupId == titem.RecordId ? 'active':''}}" data-id='{{titem.RecordId}}' data-index='{{tindex}}' bindtap='selectedItem'>{{titem.GroupName}}</view>
+          </block>
+        </view>
+        <!-- 用户协议 -->
+        <view class='agreeArea' wx:if="{{type == 2}}">
+          <view class='agree_title'>参赛须知</view>
+          <view class='agree_text'>
+            <template is="wxParse" data="{{wxParseData:agreement.nodes}}" />
+          </view>
+        </view>
+      </showModal>
+
+    </view>
+  </view>
+</container>

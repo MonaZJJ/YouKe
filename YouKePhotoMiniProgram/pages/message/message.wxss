@@ -1,0 +1,121 @@
+/* pages/message/message.wxss */
+
+.message {
+  margin: 0 20rpx;
+  border-bottom: 1rpx solid #ddd;
+  height: 139rpx;
+  position: relative;
+}
+
+.inform {
+  width: 100%;
+  height: 98rpx;
+  background-color: #f8f8f8;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 36rpx;
+  color: #383838;
+}
+.inform>view{
+  color: #A8A8A8;
+  font-size:28rpx;
+}
+.inform>view.tab-active{
+  font-size: 34rpx;
+  color: #383838;
+}
+.hasNews::before{
+  content: "";
+  display: block;
+  width: 11rpx;
+  height: 11rpx;
+  background-color: #ee0303;
+  border-radius: 50%;
+  position: relative;
+  top:25rpx;
+  left: -15rpx;
+}
+.title {
+  font-size: 32rpx;
+  padding-top: 20rpx;
+  padding-left: 15rpx;
+  width: 400rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.content {
+  font-size: 28rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 20rpx;
+  padding-left: 15rpx;
+}
+
+.time {
+  position: absolute;
+  top: 30rpx;
+  right: 32rpx;
+  font-size: 24rpx;
+}
+
+.readed {
+  color: #8a8a8a;
+}
+
+.read .title {
+  margin-left: 35rpx;
+}
+
+.read::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 36rpx;
+  left: 18rpx;
+  width: 11rpx;
+  height: 11rpx;
+  background-color: #ee0303;
+  border-radius: 50%;
+}
+
+/* 消息弹窗 */
+
+.newsArea {
+  color: #383838;
+  padding: 0rpx 20rpx;
+}
+
+.ntitle {
+  text-align: center;
+  font-size: 32rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  height: 40rpx;
+}
+
+.nTime {
+  text-align: center;
+  color: #8a8a8a;
+  font-size: 24rpx;
+  margin: 15rpx 0rpx;
+}
+
+.ntext {
+  font-size: 28rpx;
+  text-indent: 1em;
+  overflow: hidden;
+  text-align: justify;
+}
+
+/* 隐藏滚动条 */
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}

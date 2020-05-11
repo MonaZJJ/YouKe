@@ -1,0 +1,102 @@
+<container>
+  <navBar showReturn='{{false}}'>首页</navBar>
+  <view class='content'>
+    <view class='welcome-box'>
+      <text>{{WelcomeSpeech}}</text>
+      <navigator url='/pages/message/message' hover-class="none">
+        <text class='zanCom'>你今天收到{{LikeCount}}个赞，{{CommentCount}}条评论！</text>
+        <view class='{{HasMessage?"unread":""}}'></view>
+      </navigator>
+    </view>
+    <navigator url="/pages/activityDetails/activityDetails?aid={{homeActivityInfo.ActivityId}}" hover-class="none">
+      <view class='active-box' wx:if="{{ifHasHomeActInfo}}">
+        <image lazy-load='true' mode='aspectFill' src='{{homeActivityInfo.Cover}}'></image>
+        <view class='active_box_top'>
+          <view class='text-left'>
+            <text></text>
+            <text>距离投稿结束还有{{homeActivityInfo.Day}}天</text>
+          </view>
+          <view class='text-right'>
+            <view>
+              <image lazy-load='true' src='../../images/index/photo.png'></image>
+              <text>{{homeActivityInfo.WorkCounts}}</text>
+            </view>
+            <view>
+              <image lazy-load='true' src='../../images/index/eye.png'></image>
+              <text>{{homeActivityInfo.BrowseCounts}}</text>
+            </view>
+          </view>
+        </view>
+        <view class='joinBtn'>参加</view>
+      </view>
+    </navigator>
+    <!-- 跳转其他App -->
+    <view class='active-box' wx:if="{{ifHasPathApp}}" catchtap='goOtherApp'>
+      <image lazy-load='true' src='{{BannerFullUrl}}'></image>
+    </view>
+    <!-- 跳转其他App end-->
+    <view class='ranking-box'>
+      <view class='ranking-title'>
+        <text>今日排行</text>
+        <navigator url="/pages/rankingList/rankingList" hover-class="none">
+          <image lazy-load='true' src='../../images/index/more.png'></image>
+        </navigator>
+      </view>
+      <view class='ranking-list'>
+        <view class='ranking-item' wx:for='{{RankingList}}' wx:key="">
+          <view>
+            <view>
+              <view>
+                <image lazy-load='true' src='{{item.Avatar}}' data-uid='{{item.UId}}' catchtap='goPersonPage'></image>
+                <text>No.0{{index + 1}}</text>
+              </view>
+            </view>
+            <image src='../../images/index/gou.png' class='gouImg' wx:if="{{item.Authentication}}"></image>
+          </view>
+          <text>{{item.NickName}}</text>
+        </view>
+      </view>
+      <image lazy-load='true' class='left-circle' src='../../images/index/left-circle.png'></image>
+      <image lazy-load='true' class='right-circle' src='../../images/index/right-circle.png'></image>
+    </view>
+    <view class='tab-box'>
+      <view class='{{tabIndex == 1 ? "tab-active" : ""}}' data-index='1' bindtap='changeTab'>关注</view>
+      <view class='{{tabIndex == 2 ? "tab-active" : ""}}' data-index='2' bindtap='changeTab'>推荐</view>
+      <view class='{{tabIndex == 3 ? "tab-active" : ""}}' data-index='3' bindtap='changeTab'>教程</view>
+    </view>
+
+    <view class='conern-list' wx:if='{{tabIndex == 1 || tabIndex == 2}}'>
+      <worksItem workList='{{workList}}' userUid="{{userUid}}" ifConcernBtn='{{true}}' ifAvatarSrc="{{true}}" imgFirstWidthFix="{{true}}" ifCommentBtn="{{true}}" bindshowCommentModal='showcommentModalAction' bindrefreshListData='refreshListData'></worksItem>
+    </view>
+
+    <view class='course-list' wx:else>
+      <block wx:for='{{tutorialList}}' wx:key="" wx:for-item="tuItem">
+        <view class='course-item' data-tuid='{{tuItem.TutorialId}}' bindtap='toCourseDetail'>
+          <view class='courseItem_play'>
+            <image src='../../images/index/playNum.png'></image>{{tuItem.BrowsesCount}}
+          </view>
+          <view class='courseItem_duration'>{{tuItem.TutorialTime}}</view>
+          <image lazy-load='true' mode='aspectFill' src='{{tuItem.Cover}}'></image>
+          <view class='courseItem_title'>{{tuItem.Title}}</view>
+          <!-- <text>{{tuItem.Name}}</text> -->
+        </view>
+      </block>
+    </view>
+
+    <view class='twoOperation'>
+      <view>
+        <image lazy-load='true' src='../../images/index/backTop.png' catchtap='goTop' hidden="{{!backTopShow}}"></image>
+      </view>
+      <view>
+        <navigator url="/pages/uploadWorks/uploadWorks" hover-class="none">
+          <image lazy-load='true' src='../../images/index/release.png'></image>
+        </navigator>
+      </view>
+    </view>
+
+    <!-- 评论 -->
+    <commentModal id="commentModal" wid='{{wid}}' bindrefreshListData='refreshListData'>
+    </commentModal>
+
+  </view>
+</container>

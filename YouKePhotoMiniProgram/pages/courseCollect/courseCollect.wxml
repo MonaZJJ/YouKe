@@ -1,0 +1,17 @@
+<!--教程收藏页面-->
+<container>
+  <navBar showReturn='{{true}}'>教程收藏</navBar>
+  <block wx:for="{{list}}" wx:key>
+    <navigator url='/pages/courseDetail/courseDetail?tuid={{item.TId}}' hover-class='none'>
+      <view class='courseCollect'>
+        <image src='{{item.Cover}}' style='width:710rpx;height:300rpx;' mode='aspectFill'></image>
+        <view class='courseDesc'>
+          <view class='courseDescLeft'>
+            <view class='courseTime'>{{item.Title}}</view>
+          </view>
+          <image src='/images/worksDetail/collect_on.png' style='width:48rpx;height:48rpx;' class='collectSign'></image>
+        </view>
+      </view>
+    </navigator>
+  </block>
+</container>

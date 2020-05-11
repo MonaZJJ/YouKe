@@ -1,0 +1,19 @@
+<!--粉丝页面-->
+<container>
+  <navBar showReturn='{{true}}'>我的粉丝</navBar>
+  <view class='container'>
+    <block wx:for="{{List}}" wx:key="" wx:for-index="index" wx:for-item="item">
+      <view class='concern'>
+        <view class='img'>
+          <view class='img_avatarBox'>
+            <image src='../../images/index/gou.png' class='itemGouImg' wx:if="{{item.Authentication}}"></image>
+            <image src="{{item.Avatar}}" style="width:88rpx;height:88rpx;border-radius:50%;" catchtap='goPersonPage' data-uid="{{item.UId}}"></image>
+          </view>
+          <view class='nickName'>{{item.NickName}}</view>
+        </view>
+        <view class='concerned' data-id="{{item.UId}}" data-isFollow="{{item.IsFollow}}" wx:if="{{item.IsFollow}}" catchtap='noshow'>已关注</view>
+        <view class='concerned ec' data-id="{{item.UId}}" data-isFollow="{{item.IsFollow}}" wx:if="{{!item.IsFollow}}" catchtap='show'>+ 关注</view>
+      </view>
+    </block>
+  </view>
+</container>

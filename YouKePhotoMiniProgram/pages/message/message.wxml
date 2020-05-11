@@ -1,0 +1,52 @@
+<!--我的消息页面-->
+<container>
+  <navBar showReturn='{{true}}'>我的消息</navBar>
+  <view class='container'>
+    <view class='inform'>
+      <view class='{{type == 2 ? "tab-active":""}}' data-index='2' bindtap='changeTab'>
+        <text class='{{hasSystemMessage?"hasNews":""}}'>系统消息</text>
+      </view>
+      <view class='{{type == 1 ? "tab-active":""}}' data-index='1' bindtap='changeTab'>
+        <text class='{{hasUserMessage?"hasNews":""}}'>互动消息</text>
+      </view>
+      <view class='{{type == 3 ? "tab-active":""}}' data-index='3' bindtap='changeTab'>
+        <text class='{{hasWorkMessage?"hasNews":""}}'>作品消息</text>
+      </view>
+    </view>
+    <view wx:if='{{type == 1}}'>
+      <block wx:for="{{list}}" wx:key="">
+        <view bindtap='newsClick' data-index='{{index}}' data-nid='{{item.RecordId}}' class='message {{item.State==0?"read":"readed"}}'>
+          <view class='title'>{{item.MessageTitle}}</view>
+          <view class='content'>{{item.MessageContent}}</view>
+          <view class='time'>{{item.CreateTimeStr}}</view>
+        </view>
+      </block>
+    </view>
+    <view wx:if='{{type == 2}}'>
+      <block wx:for="{{list}}" wx:key="">
+        <view bindtap='newsClick' data-index='{{index}}' data-nid='{{item.RecordId}}' class='message {{item.State==0?"read":"readed"}}'>
+          <view class='title'>{{item.MessageTitle}}</view>
+          <view class='content'>{{item.MessageContent}}</view>
+          <view class='time'>{{item.CreateTimeStr}}</view>
+        </view>
+      </block>
+    </view>
+    <view wx:if='{{type == 3}}'>
+      <block wx:for="{{list}}" wx:key="">
+        <view bindtap='newsClick' data-index='{{index}}' data-nid='{{item.RecordId}}' class='message {{item.State==0?"read":"readed"}}'>
+          <view class='title'>{{item.MessageTitle}}</view>
+          <view class='content'>{{item.MessageContent}}</view>
+          <view class='time'>{{item.CreateTimeStr}}</view>
+        </view>
+      </block>
+    </view>
+    <!-- 消息内容弹窗 -->
+    <showModal id="showModal" bind:confirmEvent="_confirmEvent" bind:hideModal="hideModal">
+      <view class='newsArea'>
+        <view class='ntitle'>{{title}}</view>
+        <view class='nTime'>{{time}}</view>
+        <view class='ntext'>{{content}}</view>
+      </view>
+    </showModal>
+  </view>
+</container>

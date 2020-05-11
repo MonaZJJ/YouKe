@@ -1,0 +1,15 @@
+<!--比赛收藏页面-->
+<container>
+  <navBar showReturn='{{true}}'>比赛收藏</navBar>
+  <block wx:for="{{list}}" wx:key>
+    <view class='contestsCollect' data-id="{{item.ActivityId}}" catchtap='goDetails'>
+      <image src='{{item.Cover}}' style='width:690rpx;height:388rpx;border-radius:14rpx;' mode='aspectFill'></image>
+      <view class='contestsDesc'>
+        <view class='contestsDescLeft'>
+          <view class='contestsTitle'>{{item.Title}}</view>
+        </view>
+        <image src='/images/worksDetail/collect_on.png' style='width:48rpx;height:48rpx;' class='collectSign'></image>
+      </view>
+    </view>
+  </block>
+</container>

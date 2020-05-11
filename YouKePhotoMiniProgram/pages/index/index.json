@@ -1,0 +1,9 @@
+{
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "commentModal": "../../component/commentModal/commentModal",
+    "navBar": "../../component/navBar/navBar",
+    "container": "../../component/container/container",
+    "worksItem": "../../component/worksItem/worksItem"
+  }
+}

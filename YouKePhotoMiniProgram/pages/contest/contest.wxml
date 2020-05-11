@@ -1,0 +1,13 @@
+<!--我的比赛页面-->
+<container>
+  <navBar showReturn='{{true}}'>我的比赛</navBar>
+  <view class='container'>
+<block wx:for="{{winningList}}" wx:key="" wx:for-index="index" wx:for-item="item">
+  <view class='gainImg' bindtap="goDetail" data-wid="{{item.WId}}">
+    <image lazy-load="true" src='{{item.ImgUrl}}' mode='aspectFill'></image>
+    <view class='title'>{{item.ActivityName}}</view>
+    <view class='award'>{{item.WorkStatus}}</view>
+  </view>
+</block>
+ </view>
+</container>

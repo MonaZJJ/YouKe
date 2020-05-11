@@ -1,0 +1,14 @@
+<container>
+  <navBar showReturn='{{false}}'>登录</navBar>
+  <view class="container">
+    <view class='login'>
+      <text class='wx-Login'>微信授权登录</text>
+      <view class='login-e'></view>
+    </view>
+    <button class='wx-login' open-type="getUserInfo" bindgetuserinfo="weixinAuthLogin">
+      <image src='/images/login/wx.png'></image>
+      <text>微信登录</text>
+    </button>
+  </view>
+
+</container>

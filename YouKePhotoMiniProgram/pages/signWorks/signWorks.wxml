@@ -1,0 +1,27 @@
+<!--标签作品页-->
+<container>
+  <navBar showReturn='{{true}}'>{{tabName}}</navBar>
+  <view class='signWorks'>
+    <view class='signImg'>
+      <image src='{{coverPath}}' mode='aspectFill'></image>
+      <view class='imgDesc'>#{{tabName}}</view>
+    </view>
+    <view class='signIntro'>{{tabDesc}}</view>
+  </view>
+
+  <view class="sampleReels_Box" style='height:{{boxHeight}}px;'>
+    <view wx:for="{{List}}" style='position:{{item.position}}; top: {{item.top}}; left:{{item.left}}; width:{{width}}rpx;' class='srItem srItem-{{index}}' wx:key="" data-wid='{{item.WorkId}}' bindtap='goDetail'>
+      <view>
+        <image src='{{item.ImgList[0].SimpleImgUrl}}' mode='widthFix' bindload='loadImg' class='loadImage'></image>
+        <view class='listBottom'>
+          <view class='listBtmAvatarBox'>
+            <image src='../../images/index/gou.png' class='listBtmGouImg' wx:if="{{item.Authentication}}"></image>
+            <image src='{{item.Avatar}}' style='width:60rpx;height:60rpx;border-radius:50%;'></image>
+          </view>
+          <text class='name'>{{item.NickName}}</text>
+          <text class='num'>{{item.ImgList.length}} 张</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</container>

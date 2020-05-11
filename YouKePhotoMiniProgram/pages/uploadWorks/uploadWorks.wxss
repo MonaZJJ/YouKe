@@ -1,0 +1,142 @@
+.content{
+  margin: 0 20rpx;
+}
+.title{
+  height: 98rpx;
+  border-bottom: 1px solid #ddd;
+}
+.title input{
+  height: 98rpx;
+  line-height: 98rpx;
+  font-size: 36rpx;
+  padding-left:15rpx; 
+  font-weight:bold;
+}
+
+.textarea{
+  height: 213rpx;
+  padding:30rpx 15rpx 15rpx 15rpx ;
+  font-size: 28rpx;
+  line-height: 32rpx;
+}
+.editContent{
+  width: 100%;
+  height: 100%;
+}
+/* 替代textarea */
+.rich-text{
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  white-space: pre-line;
+}
+
+.uploadBox{
+  display: flex;
+  flex-flow:wrap;
+  margin-left: 15rpx;
+}
+.item{
+  float: left;
+  width:220rpx;
+  height:220rpx;
+  background: #eee;
+  margin-right: 18rpx;
+  margin-bottom: 18rpx;
+}
+.item:nth-child(3n){
+   margin-right: 0rpx;
+}
+.showImg{
+  width: 100%;
+  height: 100%;
+  margin-right: 18rpx;
+}
+.item_btn{
+  text-align: center;
+  line-height:220rpx;
+}
+.item_btn image{
+  width:118rpx;
+  height:117rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+.choiceBox{
+  border-top: 1px solid #ddd;
+  margin-top: 53rpx;
+}
+.choice_item{
+  height: 99rpx;
+  border-bottom: 1px solid #ddd;
+  font-size: 28rpx;
+  color: #383838;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 18rpx;
+  font-weight:bold;
+}
+.choice_item_view{
+  max-width:480rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #828282;
+  font-size: 28rpx;
+}
+.choice_item_view text{
+  padding:0 10rpx;
+}
+.moreImg{
+  width:26rpx;
+  height:26rpx;
+  margin-left: 13rpx;
+}
+.releaseBox{
+  margin-top: 219rpx;
+  margin-bottom: 60rpx;
+}
+.releaseBtn{
+  color: #fff;
+  background: #000;
+  font-size: 32rpx;
+  width:280rpx;
+  height:78rpx;
+  line-height: 78rpx;
+  border-radius:39rpx;
+}
+
+/* 选择弹窗 - 标签、设备*/
+.modalArea{
+  padding:0  30rpx;
+  display: flex;
+  flex-flow: wrap;
+  justify-content:space-around;
+}
+.select_item{
+  padding: 0 20rpx;
+  height:48rpx;
+  border:1px solid #8F8F8F;
+  border-radius:24rpx;
+  color: #828282;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 48rpx;
+  margin: 0 15rpx 39rpx 15rpx;
+}
+.select_item.active{
+  border:3rpx solid #383838;
+  color: #383838;
+  font-weight:bold;
+}
+
+/* 隐藏滚动条 */
+::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  color: transparent;
+}

@@ -1,0 +1,68 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/login",
+    "pages/member/member",
+    "pages/rankingList/rankingList",
+    "pages/match/match",
+    "pages/attestation/attestation",
+    "pages/attestationNext/attestationNext",
+    "pages/uploadWorks/uploadWorks",
+    "pages/uploadMatchWorks/uploadMatchWorks",
+    "pages/previewPictures/previewPictures",
+    "pages/personInfo/personInfo",
+    "pages/concern/concern",
+    "pages/fans/fans",
+    "pages/contest/contest",
+    "pages/collect/collect",
+    "pages/comment/comment",
+    "pages/message/message",
+    "pages/preview/preview",
+    "pages/courseDetail/courseDetail",
+    "pages/personPage/personPage",
+    "pages/worksDetail/worksDetail",
+    "pages/activityDetails/activityDetails",
+    "pages/winningList/winningList",
+    "pages/courseCollect/courseCollect",
+    "pages/contestCollect/contestCollect",
+    "pages/myWorks/myWorks",
+    "pages/signWorks/signWorks",
+    "pages/phoneWorks/phoneWorks",
+    "pages/worksCollect/worksCollect",
+    "pages/personWorks/personWorks",
+    "pages/personWinning/personWinning"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "优客摄影",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "摄影圈",
+        "iconPath": "images/tabBar/index.png",
+        "selectedIconPath": "images/tabBar/index-on.png"
+      },
+      {
+        "pagePath": "pages/match/match",
+        "text": "活动",
+        "iconPath": "images/tabBar/match.png",
+        "selectedIconPath": "images/tabBar/match-on.png"
+      },
+      {
+        "pagePath": "pages/member/member",
+        "text": "我的",
+        "iconPath": "images/tabBar/person.png",
+        "selectedIconPath": "images/tabBar/person-on.png"
+      }
+    ],
+    "color": "#8A8A8A",
+    "selectedColor": "#383838",
+    "backgroundColor": "#ffffff"
+  },
+  "sitemapLocation": "sitemap.json"
+}

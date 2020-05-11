@@ -1,0 +1,63 @@
+<view class='content'>
+  <swiper class='swiper' current="{{current}}" bindchange='changSwiperCurrent'>
+    <block wx:for="{{imgList}}" wx:key="">
+      <swiper-item>
+        <scroll-view scroll-y="true" class='scrollView'>
+          <view class='Img_view' bindtap='hideParameterBox'>
+            <image mode='widthFix' catchtap='closePreview' src="{{item.ImgUrl}}" class="slide-image" />
+          </view>
+        </scroll-view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='top-box' style='top: {{statusBarHeight + 62}}px'>
+    <text>{{current + 1}}/{{imgList.length}}</text>
+    <image src='../../images/preview/close.png' bindtap='closePreview'></image>
+  </view>
+  <view class='bottom-box' wx:if='{{state == 1}}'>
+    <view class='bot-top'>
+      <image src='{{Avatar}}'></image>
+      <text>{{NickName}}</text>
+      <image src='../../images/preview/sign.png' bindtap='showParameterBox'></image>
+    </view>
+    <view class='bot-mid'># {{Title}}</view>
+    <view class='bot-bottom'>{{Desc}}</view>
+  </view>
+  <view class='parameter-box' bindtap='hideParameterBox' wx:if='{{state == 2}}'>
+    <text>EXIF</text>
+    <view>
+      <view class='parameter-item clearfix'>
+        <text>型号</text>
+        <text>{{imgInfo.Device}}</text>
+      </view>
+      <view class='parameter-item clearfix'>
+        <text>焦距</text>
+        <text>{{imgInfo.Foci}}</text>
+      </view>
+      <view class='parameter-item clearfix'>
+        <text>光圈</text>
+        <text>{{imgInfo.Aperture}}</text>
+      </view>
+      <view class='parameter-item clearfix'>
+        <text>快门速度</text>
+        <text>{{imgInfo.Shutter}}</text>
+      </view>
+      <view class='parameter-item clearfix'>
+        <text>ISO</text>
+        <text>{{imgInfo.ISO}}</text>
+      </view>
+      <view class='parameter-item clearfix'>
+        <text>曝光补偿</text>
+        <text>{{imgInfo.ExposureCompensation}}</text>
+      </view>
+      <!-- <view class='parameter-item clearfix'>
+        <text>镜头</text>
+        <text>{{imgInfo.Camera}}</text>
+      </view> -->
+      <view class='parameter-item clearfix'>
+        <text>拍摄时间</text>
+        <text>{{imgInfo.ShootingTime}}</text>
+      </view>
+    </view>
+  </view>
+</view>

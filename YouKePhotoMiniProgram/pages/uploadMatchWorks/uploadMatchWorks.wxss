@@ -1,0 +1,211 @@
+.main{
+  margin: 0 20rpx;
+}
+.reminder{
+  padding: 15rpx 20rpx;
+  background:#383838;
+  color: #AAA;
+  font-size: 24rpx;
+  line-height: 32rpx;
+  letter-spacing: 2rpx;
+}
+
+.title{
+  height: 98rpx;
+  border-bottom: 1px solid #ddd;
+}
+.title input{
+  height: 98rpx;
+  line-height: 98rpx;
+  font-size: 36rpx;
+  padding-left:15rpx; 
+  font-weight:bold;
+}
+
+.textarea{
+  height: 213rpx;
+  padding:30rpx 15rpx 15rpx 15rpx ;
+  font-size: 28rpx;
+  line-height: 32rpx;
+}
+.editContent{
+  width: 100%;
+  height: 100%;
+}
+/* 替代textarea */
+.rich-text{
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  white-space: pre-line;
+  z-index: -1;
+}
+
+.uploadBox{
+  display: flex;
+  flex-flow:wrap;
+  margin-left: 15rpx;
+}
+.item{
+  /* float: left; */
+  width:220rpx;
+  height:220rpx;
+  line-height: 220rpx;
+  background: #eee;
+  margin-right: 18rpx;
+  margin-bottom: 18rpx;
+  text-align: center;
+}
+.item .showImg{
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+}
+.addImgBtn{
+  width:118rpx;
+  height:117rpx;
+  vertical-align: middle;
+}
+.choiceBox{
+  border-top: 1px solid #ddd;
+  margin-top: 53rpx;
+}
+.choice_item{
+  height: 99rpx;
+  border-bottom: 1px solid #ddd;
+  font-size: 28rpx;
+  color: #383838;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 18rpx;
+  font-weight:bold;
+}
+.choice_item_view{
+  max-width:480rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #828282;
+  font-size: 28rpx;
+}
+.choice_item_view text{
+  padding:0 10rpx;
+}
+.moreImg{
+  width:26rpx;
+  height:26rpx;
+  margin-left: 13rpx;
+}
+.releaseBox{
+  margin-top: 47rpx;
+  margin-bottom: 30rpx;
+}
+.releaseBtn{
+  color: #fff;
+  background: #000;
+  font-size: 32rpx;
+  width:280rpx;
+  height:78rpx;
+  line-height: 78rpx;
+  border-radius:39rpx;
+}
+
+.inputMobile{
+  width: 90%;
+  padding-left: 25rpx;
+  position: relative;
+}
+
+.inputMobile.required::before{
+  content: '*';
+  font-size: 30rpx;
+  display: block;
+  color: #f00;
+  position:absolute;
+  top: 10rpx;
+  left: 0rpx;
+  z-index: 5;
+}
+
+.agreeBox{
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  color: #000;
+  margin-top: 18rpx;
+  margin-left: 20rpx;
+}
+/* .agreeBox radio{
+  border: 1px solid #383838;
+  border-radius: 50%;
+  transform:scale(0.5);
+} */
+.checkbox{
+  position: relative;
+  top: -3rpx;
+
+}
+checkbox .wx-checkbox-input{
+  height: 26rpx;
+  width: 26rpx;
+  border: 1px solid #383838;
+  border-radius: 50%;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+  border-radius: 50%;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+/* 选择弹窗 - 标签、设备*/
+.modalArea{
+  padding:0  30rpx;
+  display: flex;
+  flex-flow: wrap;
+  justify-content:space-around;
+}
+.select_item{
+  padding: 0 20rpx;
+  height:48rpx;
+  border:1px solid #8F8F8F;
+  border-radius:24rpx;
+  color: #828282;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 48rpx;
+  margin: 0 15rpx 39rpx 15rpx;
+}
+.select_item.active{
+  border:3rpx solid #383838;
+  color: #383838;
+  font-weight:bold;
+}
+
+/* 选择弹窗 - 协议*/
+.agreeArea{
+  padding: 0rpx 36rpx 0rpx 33rpx;
+  color: #383838;
+}
+.agree_title{
+  text-align: center;
+  font-size: 30rpx;
+  font-weight:bold;
+  margin-bottom: 40rpx;
+}
+.agree_text{
+  font-size: 28rpx;
+  line-height: 42rpx;
+  /* white-space: pre-line; */
+  text-indent: 2em;
+}
+
+/* 隐藏滚动条 */
+::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  color: transparent;
+}

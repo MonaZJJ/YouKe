@@ -1,0 +1,30 @@
+<!--我的评论页面-->
+<container>
+  <navBar showReturn='{{true}}'>我的评论</navBar>
+  <block wx:for="{{list}}" wx:key="">
+    <navigator class='collect' hover-class='none' url='/pages/worksDetail/worksDetail?wid={{item.WId}}'>
+      <view class='boxCon'>
+        <view class='left'>
+          <image src='../../images/index/gou.png' class='leftGouImg' wx:if="{{item.Authentication}}"></image>
+          <image src='{{item.Avatar}}' style='width:88rpx;height:88rpx;border-radius:50%;'></image>
+        </view>
+        <view class='right'>
+          <view class='nickName'>{{item.NickName}}</view>
+          <view class='time'>{{item.CreateTimeStr}}</view>
+          <view class='content'>{{item.Content}}</view>
+          <view class='box'>
+            <view class='smallbox'>
+              <view class='sleft'>
+                <image src='{{item.ImgUrl}}' style='width:110rpx;height:110rpx;' mode='aspectFill'></image>
+              </view>
+              <view class='sright'>
+                <view class='title'>{{item.Title}}</view>
+                <view class='scontent'>{{item.Desc}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </block>
+</container>

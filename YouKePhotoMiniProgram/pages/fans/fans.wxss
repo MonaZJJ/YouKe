@@ -1,0 +1,54 @@
+/* pages/fans/fans.wxss */
+.concern{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 20rpx;
+  border-bottom:1rpx solid #ddd;
+  height:120rpx;
+  
+}
+.img{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left:10rpx;
+}
+.img_avatarBox{
+  width:88rpx;
+  height:88rpx;
+  position: relative;
+}
+.itemGouImg{
+  position: absolute;
+  z-index: 4;
+  width: 23rpx;
+  height: 23rpx;
+  bottom: 3rpx;
+  right: 3rpx;
+}
+.nickName{
+  font-size: 32rpx;
+  color: #383838;
+  margin-left:20rpx;
+  width:250rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.concerned{
+  width:130rpx;
+  height: 44rpx;
+  border: 2rpx solid #8A8A8A;
+  border-radius: 22rpx;
+  font-size: 24rpx;
+  color: #8A8A8A;
+  text-align: center;
+  line-height: 44rpx;
+  margin-right:14rpx;
+}
+.ec{
+  border-color: #383838;
+  color: #383838;
+}

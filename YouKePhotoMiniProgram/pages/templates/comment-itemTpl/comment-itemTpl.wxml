@@ -1,0 +1,37 @@
+<!-- 教程详情、作品详情页面 -->
+<template name="comment-item1Tpl">
+  <block wx:for='{{tCommentList}}' wx:key="">
+
+    <view class='commentItem_box'>
+      <!-- 评论 -->
+      <view class='commentItem'>
+        <navigator url='/pages/personPage/personPage?uid={{item.UId}}' hover-class="none">
+          <view class='comtItem_avatarBox'>
+            <image src="{{item.Avatar}}" class='comment_head_img'></image>
+            <image src='../../images/index/gou.png' class='itemGouImg' wx:if="{{item.Authentication}}"></image>
+          </view>
+        </navigator>
+        <view class='commentItem_right'>
+          <view class='replybtn_Right' data-uid='{{item.UId}}' catchtap='comReplyClick' wx:if="{{item.isShowReply}}">回复</view>
+          <view class='commentItem_right_top'>
+            <text>{{item.NickName}}</text>
+            <image src="/images/worksDetail/top.png" class='topImg' wx:if="{{item.isTop}}"></image>
+          </view>
+          <view class='commentItem_right_time'>
+            {{item.TimeStr}}
+          </view>
+          <view class='commentItem_right_content'>
+            {{item.Content}}
+          </view>
+        </view>
+      </view>
+      <!-- 作者回复 -->
+      <view class='authorReply_box' wx:if="{{item.Replys!=null&&item.Replys!=''}}">
+        <view class='commentItem_right_top author'>作者</view>
+        <view class='commentItem_right_time'>{{item.ReplyTimeStr}}</view>
+        <view class='commentItem_right_content'>{{item.Replys}}</view>
+      </view>
+
+    </view>
+  </block>
+</template>

@@ -1,0 +1,76 @@
+<container>
+  <navBar showReturn='{{true}}'>个人主页</navBar>
+  <view class='container'>
+    <view class='personTop'>
+      <view class='img'>
+        <image src='../../images/index/gou.png' class='perGouImg' wx:if="{{personalInfo.Authentication}}"></image>
+        <image src='{{personalInfo.Avatar}}' style='width:160rpx;height:160rpx;border-radius:50%;'></image>
+      </view>
+      <view class='name'>{{personalInfo.NickName}}</view>
+      <view class='motto'>{{personalInfo.Introduce}}</view>
+      <view wx:if="{{showFollowBtn}}">
+        <view class='concerned' data-id="{{uid}}" wx:if="{{personalInfo.FollowJudge}}" catchtap='noshow'>已关注</view>
+        <view class='concerned ec' data-id="{{uid}}" wx:else catchtap='show'>+ 关注</view>
+      </view>
+
+      <!-- 点赞,转发，分享 -->
+      <view class='personBottom'>
+        <button class='item' data-islike='{{personalInfo.LikesJudge}}' catchtap='likesClick'>
+          <image src="{{personalInfo.LikesJudge?'/images/personPage/selected.png':'/images/personPage/select.png'}}" style="width:48rpx;height:44rpx;padding-top:1rpx;"></image>
+          <view class='text'>点赞</view>
+        </button>
+        <button class='item' open-type='share'>
+          <image src='/images/personPage/relay.png' style='width:44rpx;height:44rpx;'></image>
+          <view class='text'>转发</view>
+        </button>
+        <button class='item' catchtap='posterShare'>
+          <image src='/images/personPage/share.png' style='width:44rpx;height:48rpx;'></image>
+          <view class='text'>分享</view>
+        </button>
+      </view>
+    </view>
+
+    <!-- 生成海报 -->
+    <view class='poster' wx:if='{{showShareImg}}' catchtouchmove="holdPositon">
+      <view class='canvas'>
+        <canvas canvas-id='posterCanvas' id='posterCanvas'></canvas>
+      </view>
+      <view class='saveImg' catchtap='posterSave'>保存名片</view>
+    </view>
+
+    <!-- 遮罩层 -->
+    <view class='mask' wx:if="{{showShareImg}}" catchtouchmove="holdPositon" bindtap='hidePoster'></view>
+
+    <!-- 个人作品 -->
+    <view class='person'>
+      <view class='box_top'>
+        <text class='time'>个人作品</text>
+        <navigator hover-class='none' url='/pages/personWorks/personWorks?uid={{uid}}'>
+          <image src='/images/member/back.png' style='width:30rpx;height:30rpx;padding-top:26rpx;'></image>
+        </navigator>
+      </view>
+      <view class='personList'>
+        <worksItem workList='{{workList}}' ifConcernBtn='{{false}}' ifAvatarSrc="{{false}}" imgFirstWidthFix="{{false}}" ifCommentBtn="{{false}}" bindrefreshListData='refreshListData'></worksItem>
+      </view>
+    </view>
+    
+    <!-- 获奖情况 -->
+    <view class='getBox'>
+      <view class='box_top'>
+        <text class='time'>获奖情况</text>
+        <navigator hover-class='none' url="/pages/personWinning/personWinning?uid={{uid}}">
+          <image src='/images/member/back.png' style='width:30rpx;height:30rpx;padding-top:26rpx;'></image>
+        </navigator>
+      </view>
+      <view>
+        <block wx:for="{{winningList}}" wx:key="" wx:for-index="index" wx:for-item="item">
+          <view class='gainImg' bindtap="goDetail" data-wid="{{item.WId}}">
+            <image src='{{item.ImgUrl}}' mode='aspectFill'></image>
+            <view class='title'>{{item.ActivityName}}</view>
+            <view class='award'>{{item.WorkStatus}}</view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</container>

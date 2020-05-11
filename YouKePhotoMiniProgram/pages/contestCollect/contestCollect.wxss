@@ -1,0 +1,31 @@
+.contestsCollect {
+  margin: 20rpx 30rpx 39rpx 30rpx;
+}
+
+.contestsDesc {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contestsTitle {
+  width: 630rpx;
+  font-size: 36rpx;
+  color: #383838;
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: justify;
+  text-overflow: ellipsis;
+}
+
+.contestsSign {
+  width: 630rpx;
+  font-size: 24rpx;
+  color: #ccc;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: justify;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,25 @@
+<!--个人信息页面-->
+<container>
+  <navBar showReturn='{{true}}'>个人信息</navBar>
+  <form bindsubmit='editUser' report-submit='true'>
+    <view class='container'>
+      <view class='common first'>
+        <view class='desc'>头像</view>
+        <view class='avatar'>
+          <image src='{{avatar}}' style='width:88rpx;height:88rpx;border-radius:50%;' bindtap="chooseImage"></image>
+        </view>
+      </view>
+      <view class='common second'>
+        <view class='desc'>昵称</view>
+        <input type='text' name="NickName" value='{{userInfo.NickName}}' class='nickName' placeholder='请输入不超过5位字符的昵称'></input>
+      </view>
+      <view class='common third'>
+        <view class='desc'>个人简介</view>
+        <input type='text' name="Introduce" value='{{userInfo.Introduce}}' class='intro' placeholder='请输入个人简介'></input>
+      </view>
+      <view class='save'>
+        <button class='button' form-type="submit">保存</button>
+      </view>
+    </view>
+  </form>
+</container>

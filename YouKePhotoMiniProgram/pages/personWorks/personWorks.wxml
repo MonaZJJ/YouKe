@@ -1,0 +1,7 @@
+<!-- 个人作品页面 -->
+<container>
+  <navBar showReturn='{{true}}'>个人作品</navBar>
+  <view class='container' style='padding-top:20rpx;'>
+    <worksItem workList='{{workList}}' ifConcernBtn='{{false}}' ifAvatarSrc="{{false}}" imgFirstWidthFix="{{false}}" ifCommentBtn="{{false}}" bindrefreshListData='refreshListData'></worksItem>
+  </view>
+</container>

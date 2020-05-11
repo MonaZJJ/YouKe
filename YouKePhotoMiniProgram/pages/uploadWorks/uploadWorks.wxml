@@ -1,0 +1,74 @@
+<container>
+  <navBar showReturn='{{true}}'>作品上传</navBar>
+  <view class="content">
+
+    <form bindsubmit="formRelease">
+      <view class='title'>
+        <input placeholder='标题' name="Title" maxlength='20' ></input>
+      </view>
+
+      <view class='textarea'>
+        <!-- 真正的textarea -->
+        <textarea class='editContent' name="ContentText" minlength="1"  maxlength="80" placeholder='作品说明...' value="{{txtRealContent}}" bindinput='txtInput' wx:if="{{!show}}" />
+        <!-- textarea的替代元素 -->
+        <view class='rich-text' wx:else>{{txtRealContent}}</view>
+      </view>
+
+      <view class='uploadBox'>
+        <block wx:for="{{ImgList}}" wx:for-index="index" wx:for-item="item" wx:key="">
+          <view class='item' catchtap='toPreviewPictures'>
+            <image src='{{item}}' mode='aspectFill' class='showImg'></image>
+          </view>
+        </block>
+        <view class='item item_btn' bindtap='addImgClick' wx:if="{{ImgNum < 9}}">
+          <image src='/images/match/add.png'></image>
+        </view>
+      </view>
+
+      <view class='choiceBox'>
+        <view class='choice_item' bindtap='groupingSelect'>
+          <view>
+            <text>标签选择</text>
+            <image src='/images/attestation/more.png' class='moreImg'></image>
+          </view>
+          <view class='choice_item_view' style="">
+            <block wx:for="{{tabListSelect}}" wx:key="">
+              <text>#{{item.TabName}}</text>
+            </block>
+          </view>
+        </view>
+        <view class='choice_item' bindtap='equipmentSelect'>
+          <view>
+            <text>设备选择</text>
+            <image src='/images/attestation/more.png' class='moreImg'></image>
+          </view>
+          <view class='choice_item_view' style="">
+            <block wx:for="{{expListSelect}}" wx:key="">
+              <text>#{{item.Name}}</text>
+            </block>
+          </view>
+        </view>
+      </view>
+
+      <view class='releaseBox'>
+        <button class='submitBtn' formType="submit" class='releaseBtn'>发布作品</button>
+      </view>
+    </form>
+
+    <showModal id="showModal" bind:confirmEvent="_confirmEvent" bind:hideModal="hideModal" padding-top="{{paddingTop}}">
+      <!-- 分组标签 -->
+      <view class='modalArea' wx:if="{{type == 0}}">
+        <block wx:for="{{tabList}}" wx:for-index="tindex" wx:for-item="titem" wx:key="">
+          <view class="select_item {{titem.isSelected ? 'active':''}}" data-id='{{titem.TabId}}' data-index='{{tindex}}' bindtap='selectedItem'>#{{titem.TabName}}</view>
+        </block>
+      </view>
+      <!-- 设备标签 -->
+      <view class='modalArea' wx:if="{{type == 1}}">
+        <block wx:for="{{expList}}" wx:for-index="tindex" wx:for-item="titem" wx:key="">
+          <view class="select_item {{expId == titem.ModelId? 'active':''}}" data-id='{{titem.ModelId}}' data-index='{{tindex}}' bindtap='selectedItem'>#{{titem.Name}}</view>
+        </block>
+      </view>
+    </showModal>
+
+  </view>
+</container>

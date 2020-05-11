@@ -1,0 +1,141 @@
+.tab{
+  height: 98rpx;
+  line-height: 98rpx;
+  background: #F8F8F8;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+.tab view{
+  width: 50%;
+  font-weight:400;
+  color: #A8A8A8;
+  font-size: 28rpx;
+}
+.tab view.tabSelect{
+  font-size: 36rpx;
+  color: #383838;
+  font-weight:bold;
+}
+.match_list{
+  margin-top: 20rpx;
+}
+
+.match_item{
+  margin: 0rpx 30rpx 30rpx 30rpx;
+  position: relative;
+  height: 388rpx;
+}
+.match_bg{
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius:14rpx;
+}
+.item_top{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  font-size: 20rpx;
+  padding-top: 20rpx;
+  margin: 0 20rpx;
+}
+.top_left{
+  width: 223rpx;
+  height: 38rpx;
+  line-height: 38rpx;
+  background:rgba(0,0,0,.6);
+  border-radius:19rpx;
+  padding-left: 35rpx;
+  position: relative;
+  z-index: 2;
+}
+.top_left::after{
+  position: absolute;
+  z-index: 2;
+  top: 15rpx;
+  left: 15rpx;
+  display: block;
+  content: "";
+  width:8rpx;
+  height:8rpx;
+  background:#fff;
+  border-radius:50%;
+}
+.top_right{
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight:400;
+}
+.albumImg{
+  width:19rpx;
+  height:23rpx;
+  margin-right: 10rpx;
+}
+.browseImg{
+  width:22rpx;
+  height:16rpx;
+  margin-left: 18rpx;
+  margin-right: 8rpx;
+}
+.item_btm{
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: 20rpx;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  color: #fff;
+}
+.shareBtn{
+  width:110rpx;
+  height:38rpx;
+  line-height: 38rpx;
+  text-align: center;
+  position: relative;
+  background:rgba(0,0,0,.6);
+  border-radius:19rpx;
+  font-size: 20rpx;
+  margin-left: 144rpx;
+  margin-right: 21rpx;
+}
+.shareImg{
+  width:20rpx;
+  height:20rpx;
+  margin-right: 13rpx;
+  position: relative;
+  top: 3rpx;
+}
+.share_button{
+  width:110rpx;
+  height:38rpx;
+  line-height: 38rpx;
+  border-radius:19rpx;
+  position: absolute;
+  top:0;
+  left: 0;
+  opacity:0;
+  z-index: 50;
+}
+.joinBtn{
+  width: 140rpx;
+  height: 52rpx;
+  text-align: center;
+  font-size: 24rpx;
+  line-height: 52rpx;
+  background: rgba(0,0,0,.6);
+  border-radius: 26rpx;
+}
+
+.top_left_end{
+  width:133rpx;
+}

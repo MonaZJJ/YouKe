@@ -1,0 +1,6 @@
+<container>
+  <navBar showReturn='{{true}}'>作品收藏</navBar>
+  <view class='container' style='padding-top:20rpx;'>
+    <worksItem workList='{{workList}}' ifConcernBtn='{{false}}' ifAvatarSrc="{{true}}" imgFirstWidthFix="{{false}}" ifCommentBtn="{{false}}" ifCancelCollectBtn="{{true}}" bindrefreshListData='refreshListData'></worksItem>
+  </view>
+</container>

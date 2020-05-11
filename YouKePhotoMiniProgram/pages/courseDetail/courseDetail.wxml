@@ -1,0 +1,58 @@
+<import src="../templates/comment-itemTpl/comment-itemTpl.wxml" />
+<container>
+  <navBar showReturn='{{true}}'>教程详情</navBar>
+  <view class='content'>
+    <view class='video-box'>
+      <video src='{{tencentVideoUrl}}'></video>
+    </view>
+    <view class='text-box'>
+      <view class='text-top'>
+        <view class='text-title'>{{tutorialInfo.Title}}
+        </view>
+        <view class='share-box'>
+          <image src='../../images/courseDetail/share.png'></image>
+          <button class='share-btn' open-type='share'></button>
+        </view>
+      </view>
+      <view class='text-bot'>{{tutorialInfo.Desc}}</view>
+    </view>
+    <view class='recommend-box'>
+      <view class='ranking-title'>
+        <text>视频推荐</text>
+      </view>
+      <view class='recommend-list'>
+        <block wx:for="{{tutorialList}}" wx:key="" wx:for-item="tutItem">
+          <view class='recommend-item' data-tuid='{{tutItem.TutorialId}}' catchtap='toCourseDetail'>
+            <image src='{{tutItem.Cover}}' mode='aspectFill'></image>
+            <view>{{tutItem.Title}}</view>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class='message-box'>
+      <view class='ranking-title'>
+        <text>精选留言（{{tCommentTotal}}）</text>
+      </view>
+      <view class='message-list'>
+        <template is="comment-item1Tpl" data="{{tCommentList}}" />
+      </view>
+    </view>
+    <view class='footer-box' style='bottom: {{keyboardHeight}}'>
+      <view class='textarea-box'>
+        <view class='textarea-bg' hidden='{{message != ""}}'>
+          <image src='../../images/courseDetail/write.png'></image>
+          <text>写留言…</text>
+        </view>
+        <textarea auto-height='{{true}}' fixed='{{true}}' show-confirm-bar="{{true}}" maxlength='-1' cursor-spacing='20' adjust-position='{{false}}' value='{{message}}' bindfocus='focusEvent' bindblur='blurEvent' bindinput='inputMessageContent' bindconfirm='inputConfirm'></textarea>
+      </view>
+      <view class='btn-box'>
+        <image src='../../images/worksDetail/collect_on.png' catchtap='cancelCollectionCourses' wx:if="{{tutorialInfo.FavoriteJudge}}"></image>
+        <image src='../../images/courseDetail/collect.png' catchtap='collectionCourses' wx:else></image>
+        <view class='footer-share'>
+          <image src='../../images/courseDetail/share.png'></image>
+          <button class='share-btn' open-type='share'></button>
+        </view>
+      </view>
+    </view>
+  </view>
+</container>

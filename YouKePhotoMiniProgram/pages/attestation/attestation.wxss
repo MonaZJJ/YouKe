@@ -1,0 +1,62 @@
+@import "../../wxParse/wxParse.wxss";
+.messageBox{
+  width: 100%;
+  background: #fff;
+  padding:40rpx 0rpx;
+  text-align: center;
+  overflow: hidden;
+}
+.messageBox{
+  margin-top: 57rpx;
+}
+.msg_li{
+  margin: 0 30rpx;
+  height:120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  /* background:#F8F8F8; */
+  border-radius:14rpx;
+  position: relative;
+  margin-bottom: 30rpx;
+}
+.li_text{
+  font-size: 28rpx;
+  color: #383838;
+  position: relative;
+}
+.bgImg{
+  width: 100%;
+  height: 120rpx;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+.iconImg{
+  width:50rpx;
+  height:50rpx;
+  position: absolute;
+  top:35rpx;
+  left: 58rpx;
+}
+
+.loc_btm{
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom:60rpx;
+  display: flex;
+  justify-content: center;
+  
+}
+.applyBtn{
+  width:280rpx;
+  height:78rpx;
+  background: #000;
+  border-radius:39rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 78rpx;
+  /* font-weight:bold; */
+  font-size: 32rpx;
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "showModal": "../../component/showModal/showModal",
+    "navBar": "../../component/navBar/navBar",
+    "container": "../../component/container/container"
+  }
+}

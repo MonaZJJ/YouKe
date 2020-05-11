@@ -1,0 +1,59 @@
+<container>
+  <navBar showReturn='{{false}}'>比赛</navBar>
+  <view class="content">
+    <view class='tab'>
+      <view class="{{type == '0' ? 'tabSelect':''}}" data-type='0' bindtap='selected'>进行中</view>
+      <view class="{{type == '1' ? 'tabSelect':''}}" data-type='1' bindtap='selected'>已结束</view>
+    </view>
+    <view class='match_list'>
+
+      <view wx:if="{{type == '0'}}">
+        <block wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="">
+          <view class='match_item'>
+            <image src='{{item.Cover}}' mode='aspectFill' class='match_bg' data-aid='{{item.ActivityId}}' bindtap='goActivityDetails'></image>
+            <view class='item_top'>
+              <view class='top_left'>距离投稿结束还有{{item.Day}}天</view>
+              <view class='top_right'>
+                <image src='/images/match/album.png' class='albumImg'></image>
+                <text>{{item.WorkCounts}}</text>
+                <image src='/images/match/browse.png' class='browseImg'></image>
+                <text>{{item.BrowseCounts}}</text>
+              </view>
+            </view>
+            <view class='item_btm'>
+              <view class='shareBtn'>
+                <image src='/images/match/share.png' class='shareImg'></image>分享
+                <button open-type='share' data-aid='{{item.ActivityId}}' data-url='{{item.Cover}}' data-title='{{item.Title}}' class='share_button'></button>
+              </view>
+              <view class='joinBtn' data-aid='{{item.ActivityId}}' bindtap='goActivityDetails'>参加</view>
+            </view>
+          </view>
+        </block>
+      </view>
+      <view wx:if="{{type == '1'}}">
+        <block wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="">
+          <view class='match_item'>
+            <image src='{{item.Cover}}' class='match_bg' mode='aspectFill' data-aid='{{item.ActivityId}}' bindtap='goActivityDetails'></image>
+            <view class='item_top'>
+              <view class='top_left top_left_end'>赛事已结束</view>
+              <view class='top_right'>
+                <image src='/images/match/album.png' class='albumImg'></image>
+                <text>{{item.WorkCounts}}</text>
+                <image src='/images/match/browse.png' class='browseImg'></image>
+                <text>{{item.BrowseCounts}}</text>
+              </view>
+            </view>
+            <view class='item_btm'>
+              <view class='shareBtn'>
+                <image src='/images/match/share.png' class='shareImg'></image>分享
+                <button open-type='share' data-aid='{{item.ActivityId}}' data-url='{{item.Cover}}' data-title='{{item.Title}}' class='share_button'></button>
+              </view>
+              <view class='joinBtn' data-aid='{{item.ActivityId}}' bindtap='goActivityDetails'>查看作品</view>
+            </view>
+          </view>
+        </block>
+      </view>
+
+    </view>
+  </view>
+</container>

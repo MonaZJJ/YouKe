@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "navBar": "../../component/navBar/navBar",
+    "commentModal": "../../component/commentModal/commentModal",
+    "container": "../../component/container/container",
+    "worksItem": "../../component/worksItem/worksItem"
+  }
+}

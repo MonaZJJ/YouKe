@@ -1,0 +1,81 @@
+<container>
+  <navBar showReturn='{{true}}'>认证摄影师</navBar>
+  <view class="content">
+    <form bindsubmit="formSubmit">
+      <view class='title'>必备条件</view>
+      <view class='conditionBox'>
+        <view class='con_notes'>至少发布过{{authenWorkCount}}组作品</view>
+        <view class='con_main'>
+          <text wx:if="{{userWorkCount<authenWorkCount}}">还差{{authenWorkCount-userWorkCount}}组</text>
+          <text wx:else>已满足条件</text>
+          <view class='go_release' wx:if="{{userWorkCount<authenWorkCount}}">
+            <navigator url="/pages/uploadWorks/uploadWorks" hover-class="none" open-type="navigate">
+              <text>去发布</text>
+              <image src='/images/attestation/more.png' class='moreImg'></image>
+            </navigator>
+          </view>
+        </view>
+        <view class='con_notes'>{{authenRecommendCount}}组作品进入过推荐</view>
+        <view class='con_main'>
+          <text wx:if="{{userRecommendCount<authenRecommendCount}}">还差{{authenRecommendCount-userRecommendCount}}组</text>
+          <text wx:else>已满足条件</text>
+          <view class='go_release' wx:if="{{userRecommendCount<authenRecommendCount}}">
+            <navigator url="/pages/uploadWorks/uploadWorks" hover-class="none" open-type="navigate">
+              <text>去发布</text>
+              <image src='/images/attestation/more.png' class='moreImg'></image>
+            </navigator>
+          </view>
+        </view>
+        <view class='con_notes'>{{authenPromotionCount}}组作品在赛事中通过晋级</view>
+        <view class='con_main'>
+          <text wx:if="{{userPromotionCount<authenPromotionCount}}">还差{{authenPromotionCount-userPromotionCount}}组</text>
+          <text wx:else>已满足条件</text>
+          <view class='go_release' wx:if="{{userPromotionCount<authenPromotionCount}}">
+            <navigator url="/pages/uploadWorks/uploadWorks" hover-class="none" open-type="navigate">
+              <text>去发布</text>
+              <image src='/images/attestation/more.png' class='moreImg'></image>
+            </navigator>
+          </view>
+        </view>
+      </view>
+
+      <view class='title' style='margin-bottom:15rpx;'>资料填写</view>
+      <view class='dataBox'>
+        <view class='data_item'>
+          <input placeholder="真实姓名" name="realName"></input>
+        </view>
+        <view class='data_item'>
+          <input placeholder="身份证号码" type='number' name="IDCard"></input>
+        </view>
+        <view class='data_item'>
+          <input placeholder="手机号码" name="mobile" maxlength='11'></input>
+        </view>
+      </view>
+
+      <view class='title title_upload'>上传身份证</view>
+      <view class='uploadBox'>
+        <view class='upload_li' bindtap='uploadPositive'>
+          <image src='/images/attestation/camera.png' class='uploadImg' ></image>
+          <view>上传身份证正面</view>
+          <image mode='aspectFill' src='{{posImg}}' class='upload_bg'></image>
+        </view>
+        <view class='upload_li' bindtap='uploadOpposite'>
+          <image src='/images/attestation/camera.png' class='uploadImg' ></image>
+          <view>上传身份证反面</view>
+          <image mode='aspectFill' src='{{oppImg}}' class='upload_bg'></image>
+        </view>
+      </view>
+
+      <view class='title title_upload_two'>上传证明资料</view>
+      <view class='upload_li' bindtap='uploadCertificate'>
+        <image src='/images/attestation/certificate.png' class='uploadImg' ></image>
+        <view>上传证书、资历证明</view>
+        <image mode='aspectFill' src='{{certificate}}' class='upload_bg'></image>
+      </view>
+
+      <view class='submitBox'>
+        <button class='submitBtn' formType="submit">提交审核</button>
+      </view>
+    </form>
+  </view>
+</container>

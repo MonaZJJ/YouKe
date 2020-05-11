@@ -1,0 +1,141 @@
+<import src="../templates/comment-itemTpl/comment-itemTpl.wxml" />
+<!--作品详情页-->
+<container>
+  <navBar showReturn='{{true}}'>作品详情</navBar>
+  <view class='personDetail'>
+    <view class='detail-top'>
+      <view class='top-left'>
+        <navigator url='/pages/personPage/personPage?uid={{workInfo.UId}}' hover-class='none'>
+          <view class='topLeft_avatarBox'>
+            <image src='{{workInfo.Avatar}}' style='width:84rpx;height:84rpx;border-radius:50%;'></image>
+            <image src='../../images/index/gou.png' class='itemGouImg' wx:if="{{workInfo.Authentication}}"></image>
+          </view>
+        </navigator>
+        <text>{{workInfo.NickName}}</text>
+      </view>
+      <view class='top-right' wx:if="{{!IsAuthor}}">
+        <!-- <view class='concerned' catchtap='cancelFollowClick' wx:if="{{IsFollow}}">已关注</view> -->
+        <view class='concerned ec' catchtap='addfollowClick' wx:if="{{!IsFollow}}">+ 关注</view>
+      </view>
+    </view>
+    <view class='img-list clearfix {{workInfo.className}}'>
+      <block wx:for='{{imgList}}' wx:for-item='subItem' wx:for-index='subIndex' wx:key="">
+        <image mode='widthFix' src='{{subItem.ImgUrl}}' data-idx='{{subIndex}}' bindtap='goPreview' wx:if='{{workInfo.className == "item-1"}}'></image>
+        <image mode='aspectFill' src='{{subItem.ImgUrl}}' data-idx='{{subIndex}}' bindtap='goPreview' wx:else></image>
+      </block>
+    </view>
+    <view class='detail-bottom'>
+      <text class='bottom-title'>{{workInfo.Title}}</text>
+      <text class='bottom-des'>{{workInfo.Desc}}</text>
+      <view class='bottom-bot clearfix'>
+        <view>
+          <block wx:for="{{workInfo.TabList}}" wx:for-item="tabItem" wx:key="">
+            <view catchtap='goSignWorks' data-tid='{{tabItem.TabId}}'>{{tabItem.TabName}}</view>
+          </block>
+        </view>
+      </view>
+      <view class='bottom-score' wx:if="{{workInfo.AId == 0}}">
+        <view class='button-score'>
+          <text class='score'>{{workInfo.AvgScore}}</text>
+          <text class='num'>分 | {{workInfo.GradesCount}}人</text>
+        </view>
+        <view class='button'>
+          <view class='alyScoringBtn' wx:if="{{IsGrades}}">已打分</view>
+          <view class='scoringBtn' bindtap='showSliderLayer' wx:else>我要打分</view>
+        </view>
+      </view>
+    </view>
+    <!-- 转发、分享等操作 -->
+    <view class='operate'>
+      <button class='item' catchtap='likeWorksClick'>
+        <image src="{{IsLike?'/images/worksDetail/selected.png':'/images/worksDetail/select.png'}}" class='likeImg'></image>
+        <view class='text'>点赞</view>
+      </button>
+      <button class='item' catchtap='favoriteWorksClick'>
+        <image src="{{IsFavorite?'/images/worksDetail/collect_on.png':'/images/worksDetail/collect.png'}}" style='width:48rpx;height:48rpx;'></image>
+        <view class='text'>收藏</view>
+      </button>
+      <button class='item' open-type='share'>
+        <image src='/images/worksDetail/relay.png' style='width:44rpx;height:44rpx;'></image>
+        <view class='text'>转发</view>
+      </button>
+      <button class='item' catchtap='posterShare'>
+        <image src='/images/worksDetail/share.png' style='width:44rpx;height:48rpx;'></image>
+        <view class='text'>分享</view>
+      </button>
+    </view>
+    <!-- 用户留言与点赞的选择 -->
+    <view class='select'>
+      <view class='message {{tabIndex == 1 ? "tab-active" : ""}}' data-index='1' bindtap='changeTab'>用户留言({{msgTotal}})</view>
+      <view class='goods {{tabIndex == 2 ? "tab-active" : ""}}' data-index='2' bindtap='changeTab'>点赞({{likeTotal}})</view>
+    </view>
+    <!-- 用户留言 -->
+    <view class='leaveMessage' id='leaveMessage' wx:if="{{tabIndex==1}}">
+      <template is="comment-item1Tpl" data="{{tCommentList}}"></template>
+    </view>
+    <!-- 点赞 -->
+    <view wx:if="{{tabIndex==2}}">
+      <view class='goodsList'>
+        <block wx:for="{{workLikeList}}" wx:key="">
+          <view class='goodsItem'>
+            <navigator url='/pages/personPage/personPage?uid={{item.UId}}' hover-class='none'>
+              <view class='head_box'>
+                <image src='{{item.Avatar}}' class='head'></image>
+                <image src='../../images/index/gou.png' class='loveGouImg' wx:if="{{item.Authentication}}"></image>
+              </view>
+              <view class='name'>{{item.Name}}</view>
+            </navigator>
+          </view>
+        </block>
+        <text class='ignore' wx:if="{{likeTotal>workLikeList.length}}">...</text>
+      </view>
+      <view class='manyBtn' wx:if="{{likeTotal>workLikeList.length}}" catchtap='openMoreLike'>展开更多</view>
+    </view>
+
+  </view>
+  <!-- 写留言文本框 -->
+  <view class='footer-box' style='bottom: {{keyboardHeight}}'>
+    <view class='textarea-box'>
+      <view class='textarea-bg' hidden='{{message != ""}}'>
+        <image src='/images/worksDetail/write.png'></image>
+        <text>写留言…</text>
+      </view>
+      <textarea auto-height='{{true}}' fixed='{{true}}' maxlength='-1' cursor-spacing='20' adjust-position='{{false}}' show-confirm-bar='{{true}}' value='{{message}}' bindfocus='focusEvent' bindblur='blurEvent' bindinput='inputMessageContent' bindconfirm='inputConfirm'></textarea>
+    </view>
+  </view>
+
+  <!-- 我要打分 -->
+  <view class='layer-box' bindtap='hideSliderLayer' catchtouchmove='contentTap' wx:if='{{showSlider}}'>
+    <view class='layer-content' catchtap='contentTap'>
+      <image src='../../images/index/score-bg.png'></image>
+      <view class='slide-box'>
+        <view class='canvas-box'>
+          <canvas canvas-id='scoreCanvas'></canvas>
+        </view>
+        <view class='custom-slider'>
+          <view class='slider-line'>
+            <view style='width: {{rightWidth}}rpx'></view>
+          </view>
+          <image class='slider-block' src='../../images/circle.png' style='left: {{blockLeft}}rpx'></image>
+          <slider value='{{score}}' backgroundColor='{{slider.backgroundColor}}' block-color='{{slider.blockColor}}' block-size='{{slider.size}}' bindchange="sliderChange" bindchanging="sliderChange" />
+        </view>
+      </view>
+      <view class='sure-btn' catchtap='scoreConfirm'>确认打分</view>
+    </view>
+  </view>
+
+  <!-- 生成海报 -->
+  <view class='poster' wx:if='{{showShareImg}}' catchtouchmove="holdPositon">
+    <view class='canvas'>
+      <canvas canvas-id='posterCanvas' id='posterCanvas'></canvas>
+    </view>
+    <view class='saveImg' catchtap='posterSave'>保存海报</view>
+  </view>
+
+  <!-- 遮罩层 -->
+  <view class='mask' wx:if="{{maskflag}}" catchtap='closeMask' catchtouchmove="holdPositon"></view>
+
+  <!-- 评论 -->
+  <commentModal id="commentModal" wid='{{wid}}' uid='{{replyUId}}' bindrefreshListData='refreshListData'></commentModal>
+
+</container>

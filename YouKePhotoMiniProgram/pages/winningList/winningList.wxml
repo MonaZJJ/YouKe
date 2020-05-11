@@ -1,0 +1,64 @@
+<container>
+  <navBar showReturn='{{true}}'>获奖作品</navBar>
+  <view class="content">
+    <block wx:for="{{List}}" wx:key="" wx:for-index="index" wx:for-item="item">
+      <view class='prizeSign'>{{item.Level}}</view>
+
+      <view class='prizeList'>
+        <block wx:for="{{item.List}}" wx:key="" wx:for-index="pindex" wx:for-item="pitem">
+          <view class='prizeItem'>
+            <view class='pItem_top'>
+              <view>
+                <view class='pItem_topAvatarBox'>
+                  <image src='../../images/index/gou.png' class='pItemGouImg' wx:if="{{pitem.Authentication}}"></image>
+                  <image src='{{pitem.Avatar}}' class='sitemHead' catchtap='goPersonPage' data-uid='{{pitem.UId}}'></image>
+                </view>
+                <text class='nickName'>{{pitem.NickName}}</text>
+                <view wx:if="{{systemUid !== pitem.UId}}" class='follow'>
+                  <text data-id='{{pitem.UId}}' wx:if="{{!pitem.IsFollow}}" catchtap='show'> +关注 </text>
+                  <text data-id='{{pitem.UId}}' wx:if="{{pitem.IsFollow}}" catchtap='noshow'> 已关注 </text>
+                </view>
+              </view>
+
+              <view>
+                <view class='gray_bg grayBg_first' data-wid='{{pitem.WorkId}}' data-uid='{{pitem.UId}}' catchtap='commentModalClcik'>
+                  <image src='../../images/index/evaluate.png' style="width:38rpx;height:34rpx;"></image>
+                  <text style='color:black'>{{pitem.CommentCount}}</text>
+                </view>
+                <view class='gray_bg' data-wid='{{pitem.WorkId}}' data-like='{{pitem.IsLike}}' catchtap='likesBtnClick'>
+                  <image src='../../images/personPage/selected.png' class='loveImg' wx:if="{{pitem.IsLike}}"></image>
+                  <image src='../../images/index/love_new.png' class='loveImg' wx:else></image>
+                  <text style="{{pitem.IsLike?'color:#383838;':'color:rgba(163, 163, 163, 0.6)'}}">{{pitem.LikeCount}}</text>
+                </view>
+              </view>
+            </view>
+            <view class='pItem_mid'>
+              <!-- <navigator url="/pages/worksDetail/worksDetail?wid={{pitem.WorkId}}" hover-class="none"> -->
+              <image src='{{pitem.ImgList[0].SimpleImgUrl}}' data-wid='{{pitem.WorkId}}' catchtap='goPreview' mode="widthFix" class='sitemImg'></image>
+              <!-- </navigator> -->
+            </view>
+            <view class='pItem_btm'>
+              <view class='pItem_btm_left'>
+                <view>{{pitem.Title}}</view>
+                <view>{{pitem.Desc}}</view>
+                <!-- <view class='pItem_sign'>
+                  <view class='phoneName pItem_sLitem'>#{{pitem.PhoneModel.Name}}</view>
+                  <view class='pItem_signList'>
+                    <scroll-view class='scrollBox' scroll-x>
+                      <block wx:for="{{pitem.TabList}}" wx:key="" wx:for-index="sLindex" wx:for-item="sLitem" data-tid="{{TabId}}">
+                        <view class='pItem_sLitem' catchtap='goSignWorks'>{{TabName}}</view>
+                      </block>
+                    </scroll-view>
+                  </view>
+                </view> -->
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </block>
+    <!-- 评论 -->
+    <commentModal id="commentModal" wid='{{wid}}' bindrefreshListData='refreshListData'>
+    </commentModal>
+  </view>
+</container>

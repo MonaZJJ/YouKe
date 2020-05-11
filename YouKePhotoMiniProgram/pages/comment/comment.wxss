@@ -1,0 +1,98 @@
+.boxCon {
+  display: flex;
+  flex-direction: row;
+  margin: 40rpx 22rpx;
+}
+
+.boxCon:first-child {
+  margin-top: 9rpx;
+}
+.left{
+  position: relative;
+  width: 88rpx;
+  height: 88rpx;
+}
+.leftGouImg{
+  width: 23rpx;
+  height: 23rpx;
+  position: absolute;
+  z-index: 4;
+  bottom: 5rpx;
+  right: 5rpx;
+}
+.right {
+  margin-left: 21rpx;
+}
+
+.nickName {
+  font-size: 32rpx;
+  color: #383838;
+  margin-top: 5rpx;
+  width: 300rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.time {
+  font-size: 24rpx;
+  color: #8a8a8a;
+  margin-top: 19rpx;
+}
+
+.content {
+  font-size: 24rpx;
+  color: #383838;
+  margin-top: 34rpx;
+  width: 574rpx;
+  white-space: pre-wrap;
+  letter-spacing: 1rpx;
+  text-align: justify;
+}
+
+.box {
+  width: 600rpx;
+  height: 128rpx;
+  background-color: #f8f8f8;
+  margin-top: 15rpx;
+  padding-top: 18rpx;
+}
+
+.smallbox {
+  width: 560rpx;
+  height: 110rpx;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+}
+
+.sleft {
+  width: 110rpx;
+  height: 110rpx;
+  background-color: #e1e1e1;
+}
+
+.sright {
+  padding-left: 15rpx;
+}
+
+.title {
+  width: 430rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 32rpx;
+  color: #383838;
+  padding-top: 16rpx;
+}
+
+.scontent {
+  margin-top: 6rpx;
+  font-size: 22rpx;
+  color: #8a8a8a;
+  width:430rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,10 @@
+  <!-- 遮罩层 -->
+  <view class='mask' wx:if="{{show}}" catchtap='hideModal' catchtouchmove="holdPositon"></view>
+  <!-- 弹窗 -->
+  <view class='modal' wx:if="{{show}}" catchtouchmove="holdPositon">
+    <image src='/images/contactUs.png' class='contactUs_bg' wx:if="{{bgShow}}"></image>
+    <scroll-view class="scroll-view_modal" scroll-y style='padding-top:{{paddingTop}}rpx;'>
+      <slot></slot>
+    </scroll-view>
+    <button class='submitBtn_modal' catchtap='_confirmEvent'>{{btnText}}</button>
+  </view>

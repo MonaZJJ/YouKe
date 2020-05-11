@@ -1,0 +1,6 @@
+<container>
+  <navBar showReturn='{{true}}'>我的作品</navBar>
+  <view class='container' style='padding-top:20rpx;'>
+    <worksItem workList='{{workList}}' ifConcernBtn='{{false}}' ifAvatarSrc="{{false}}" imgFirstWidthFix="{{false}}" ifCommentBtn="{{false}}"  bindrefreshListData='refreshListData'></worksItem>
+  </view>
+</container>
