@@ -1,0 +1,44 @@
+.content-wrapper{
+    background: #fff;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+input[type="number"]{
+    -moz-appearance: textfield;
+}
+/*以下是我自己加的css*/
+#table_header_classify {
+    overflow: hidden;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    background: #f8f8f8;
+    margin-top: 30px;
+}
+.contentBody {
+    border-bottom: 1px solid #ccc;
+}
+.contentBody {
+    overflow: hidden;
+}
+.contentBody>div {
+    line-height: 60px;
+}
+.contentBody .iconfont {
+    color: #cdcdcd;
+    font-size: 22px;
+    vertical-align: middle;
+}
+.classify_two {
+    text-indent: 2em;
+}

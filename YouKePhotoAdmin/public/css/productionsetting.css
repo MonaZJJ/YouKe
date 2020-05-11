@@ -1,0 +1,36 @@
+.footer-btn {
+    margin: 50px 0;
+}
+.list_title_header {}
+
+.head-type ul {
+    border-bottom: 1px solid #3C8CBC;
+    margin-bottom: 50px;
+}
+
+.head-type ul li a {
+    color: black;
+}
+
+.head-type ul .active a {
+    color: #ffffff !important;
+    background-color: #3C8CBC !important;
+}
+.option-list {
+    border-bottom: 1px solid #c5c5c5;
+    padding-bottom: 30px;
+}
+
+.option-list .form-group {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 100px;
+}
+
+.btn {
+    width: 100px;
+    height: 35px;
+    border-radius: 5px;
+}

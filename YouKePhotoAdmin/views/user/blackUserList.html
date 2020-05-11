@@ -1,0 +1,126 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}黑名单列表{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+<link rel="stylesheet" href="/public/css/userList.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs" id="State">
+                        <li>
+                            <a data-type="0" href="/user/userList">用户列表</a>
+                        </li>
+                        <li>
+                            <a data-type="1" href="/user/certificationUserList">认证列表</a>
+                        </li>
+                        <li class="active">
+                            <a data-type="1" href="#">黑名单列表</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="option-list form-inline clearfix">
+                    <div class="form-group col-lg-3 col-sm-6">
+                        <label>用户昵称：</label>
+                        <input type="text" class="form-control" id="NickName">
+                    </div>
+                    <div class="form-group col-lg-3 col-sm-6 option">
+                        <label>开始时间：</label>
+                        <input type="text" class="form-control" readonly="" id="start">
+                    </div>
+                    <div class="form-group col-lg-3 col-sm-6 option">
+                        <label>结束时间：</label>
+                        <input type="text" class="form-control" readonly="" id="end">
+                    </div>
+                    <div class="form-group col-lg-3 col-sm-6" style="text-align:center;">
+                        <a class="btn btn-primary" style="display: inline-block;background: #424242;border-color: #424242;"
+                            id="search">查询</a>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <div class="checkAll btn">
+                            <input type="checkbox" class="sel-all" id="selAll">
+                        </div>
+                        <button class="btn btn-primary delete-btn clear_msg" data-toggle="modal" data-target="#addGrouping">私信</button>
+                        <div class="paginalNum" style="margin-bottom: 30px;">
+                            <span>每页显示数量：</span>
+                            <select name="pagesize_dropdown" id="pagesize_dropdown">
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="40">40</option>
+                                <option value="200">200</option>
+                                <option value="500">500</option>
+                                <option value="1000">1000</option>
+                                <option value="2000">2000</option>
+                            </select>
+                        </div>
+                        <div class="sortingway" style="margin-bottom: 30px;">
+                            <span>排序方式：</span>
+                            <select name="sortingway_dropdown" id="sortingway_dropdown">
+                                <option value="0">按照创建时间</option>
+                                <option value="1">按照作品量</option>
+                                <option value="2">按照推荐量</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <table id="productTable" class="table table-bordered table-striped">
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="addGrouping" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <!--fade-->
+        <div class="modal-dialog" role="document" style="width:810px;margin: 100px auto;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">消息发送</h4>
+                </div>
+                <div class="modal-body" style="margin:auto;padding-left: 100px;min-height: 300px;">
+                    <div class="form-group clearfix">
+                        <label class="col-md-2 control-label">消息标题：</label>
+                        <div class="col-md-4">
+                            <input type="text" placeholder="" class="form-control" id="MessageTitle" style="width:380px;display: inline-block">
+                        </div>
+                    </div>
+                    <div class="form-group clearfix">
+                        <label class="col-md-2 control-label">内容：</label>
+                        <div class="col-md-4">
+                            <textarea class="form-control product-intro" id="MessageContent" style="width:380px;height:80px;"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="send_if_confirm">确认</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+<script src="/public/plugins/laydate/laydate.js"></script>
+<script src="/public/plugins/laydate/moment.js"></script>
+<script src="/public/js/userList.js"></script>
+<script src="/public/js/blackUserList.js"></script>
+{{/block}}

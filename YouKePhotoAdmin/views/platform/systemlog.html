@@ -1,0 +1,98 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}系统日志{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+<link rel="stylesheet" href="/public/css/systemlog.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-type="1" data-toggle="tab" href="#manage">日志</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="manage">
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-md-1 journal">
+                                    <label class="control-label ">操作人:</label>
+                                </div>
+                                <div class="col-md-2">
+                                    <select class="form-control select2 select2-hidden-accessible" id="operateList" tabindex="-1" aria-hidden="true">
+                                        <option selected="selected" value="">请选择操作人</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-2 journal">
+                                    <label class="control-label">选择时间段：</label>
+                                </div>
+                                <div class="col-md-2">
+                                    <input type="text" class="form-control" id="start" placeholder="">
+                                </div>
+                                <div class="col-md-1 journal_span">
+                                    <span class="control-label">至</span>
+                                </div>
+                                <div class="col-md-2">
+                                    <input type="text" class="form-control" id="end" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-1 journal">
+                                    <button type="button" class="btn btn-primary" id="search">查询</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="add">
+                    </div>
+                </div>
+                <div class="functionHandleArea clearfix">
+                    <div class="batchHandleArea">
+                        <div class="checkall">
+                            <input type="checkbox" name="selectall" id="stuCheckBox" class="check-box">
+                        </div>
+                    </div>
+                    <a class="btn btn-default ml20 pull-left" id="delete">删除</a>
+                    <a class="btn btn-default ml20 pull-left" id="empty">清空日志</a>
+                    <div class="paginalNum">
+                        <span>每页显示数量：</span>
+                        <select name="pagesize_dropdown" id="pagesize_dropdown">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="40">40</option>
+                            <option value="200">200</option>
+                            <option value="500">500</option>
+                            <option value="1000">1000</option>
+                            <option value="2000">2000</option>
+                        </select>
+                    </div>
+                    <table class="table table-striped" id="recoveryTable">
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/plugins/laydate/laydate.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+<script src="/public/js/systemlog.js"></script>
+{{/block}}

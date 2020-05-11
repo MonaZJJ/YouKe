@@ -1,0 +1,118 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}banner图管理{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/bannermanagement.css">
+<link rel="stylesheet" href="/public/css/tutorialList.css">
+<link rel="stylesheet" href="/public/addtutorial.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-type="0" data-toggle="tab" href="#first">banner图管理</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="form-group col-lg-12 col-sm-12 clearfix">
+                    <label style="float: left;">跳转设置：</label>
+                    <div class="col-md-3 sale-state" id="State" style="float: left;">
+                        <label class="checkbox-inline">
+                            <input type="radio" name="optionsRadiosinline" id="optionsRadios1" value="1">
+                            跳转比赛
+                        </label>
+                        <label class="checkbox-inline">
+                            <input type="radio" name="optionsRadiosinline" id="optionsRadios2" value="2"> 跳转小程序
+                        </label>
+                    </div>
+
+                </div>
+
+
+                <div class="form-group clearfix activity" style="display:none;">
+                    <label class="col-md-1 control-label">
+                        赛事：</label>
+                    <div class="col-md-3">
+                        <select class="form-control" id="ActivityList">
+                            <option selected="selected" value="0">请选择赛事</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="program" style="display:none;">
+                    <div class="form-group clearfix">
+                        <label class="col-md-1 control-label">
+                            Banner图：</label>
+                        <div class="col-md-3">
+                            <div class="icon-box_about_classify">
+                                <div class="small_con">
+                                    <img src="/public/images/addImg.png" alt="" id="small_icon" style="width: 100px;height: 100px">
+                                    <div id="small_upload_pick" class="webuploader-container">
+                                        <div class="webuploader-pick">
+                                            <div class="webuploader-pick"></div>
+                                            <div id="rt_rt_1c8m7obd41ruu1uhn1vno1nfqkar1" style="position: absolute; top: 0px; left: 0px; overflow: hidden; bottom: auto; right: auto; width: 50px; height: 50px;">
+                                                <input type="file" name="file" class="webuploader-element-invisible"
+                                                    multiple="multiple" accept="image/gif,image/jpg,image/jpeg,image/bmp,image/png">
+                                                <label style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label>
+                                            </div>
+                                        </div>
+                                        <div id="rt_rt_1cm4u98e588e119mc1v1bhe1au61" style="position: absolute; top: 0px; left: 0px; overflow: hidden; bottom: auto; right: auto; width: 100px; height: 100px;"><input
+                                                type="file" name="file" class="webuploader-element-invisible" multiple="multiple"
+                                                accept="image/gif,image/jpg,image/jpeg,image/bmp,image/png"><label
+                                                style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="color: #ccc;margin-top: 8px">
+                                16:9
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group clearfix">
+                        <label class="col-md-1 control-label">
+                            AppID：</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" id="AppID" placeholder="跳转到的小程序AppID">
+                        </div>
+                    </div>
+                    <div class="form-group clearfix">
+                        <label class="col-md-1 control-label">
+                            Path：</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" id="AppPath" placeholder="打开的页面路径，如果为空则打开首页">
+                        </div>
+                    </div>
+                    <div class="form-group clearfix">
+                        <label class="col-md-1 control-label">
+                            Data：</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" id="ExtraData" placeholder="需要传递给目标小程序的数据">
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-btn clearfix">
+                    <button class="btn" style="margin-right: 12px" id="lastStep">取消</button>
+                    <button class="btn btn-primary" id="CreateMatch">确认</button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/plugins/webuploader/webuploader.js"></script>
+<script src="/public/js/upload_icon_pic.js"></script>
+<script src="/public/js/bannermanagement.js"></script>
+{{/block}}

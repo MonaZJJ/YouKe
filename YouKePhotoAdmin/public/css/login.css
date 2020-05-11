@@ -1,0 +1,99 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+#login {
+	margin: auto;
+	display: block;
+	width: 134px;
+	height: 54px;
+	background: #1992e8;
+	font-size: 16px;
+	border-radius: 10px;
+}
+
+.reset_box {
+	margin: 12px auto 20px;
+	text-align: center;
+}
+
+.welcome-text {
+	text-align: center;
+	color: #888;
+}
+
+.register {
+	float: left;
+	cursor: pointer;
+}
+
+.forget {
+	float: right;
+	cursor: pointer;
+}
+
+.vCode-input {
+	width: calc(100% - 125px);
+	float: left;
+}
+
+.v-code {
+	width: 120px;
+	background-color: #1992e8;
+	float: right;
+	border-radius: 10px;
+	outline: none !important;
+}
+
+.go-login {
+	text-align: right;
+}
+
+.go-login a {
+	color: red;
+	padding: 0 5px;
+}
+
+.operate-box {
+	text-align: center;
+	margin-top: 60px;
+}
+
+.operate-box button {
+	width: 135px;
+	background-color: #1992e8;
+	border-radius: 10px;
+	outline: none !important;
+}
+
+.second-step {
+	display: none;
+}
+
+.store-list {
+	color: #aaaaaa;
+}
+
+.wrapper_box {
+	min-height: 100%;
+	background: url(../images/bg.jpg) no-repeat;
+	background-size: cover;
+	border-top: 1px solid transparent;
+	position: relative;
+}
+
+.login-box p {
+	text-align: center;
+}
+
+.login-box {
+	margin: 150px auto;
+}
+
+.footer {
+	position: absolute;
+	left: 50%;
+	bottom: 20px;
+	transform: translate(-50%, -50%);
+}

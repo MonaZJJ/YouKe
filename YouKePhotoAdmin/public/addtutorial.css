@@ -1,0 +1,116 @@
+.webuploader-element-invisible{
+    width: 100% !important;
+    height: 100% !important;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.img-container{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+}
+.img-container img{
+    width: 100%;
+    height: 100%;
+}
+.img-container .img-input{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+.img-container:hover .close-img{
+    display: block;
+}
+.img-container .close-img{
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.add-div{
+    margin-top: 20px;
+    display: none;
+}
+.cancel-add{
+    float: left;
+    display: block;
+    height: 34px;
+    line-height: 34px;
+    color: #0a0a0a;
+    cursor: pointer;
+}
+.add-input{
+    float: left;
+    width: 160px;
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+
+
+/*上传图标样式*/
+.small_con {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 100px
+}
+
+#small_upload_pick {
+    position: absolute;
+    width: 100% !important;
+    height: 100% !important;
+    left: 0px;
+    top: 0px;
+}
+
+#small_upload_pick div,
+#small_upload_pick input {
+    width: 100% !important;
+    height: 100% !important;
+    opacity: 0;
+    cursor: pointer;
+}
+
+#small_upload_pick label {
+    display: none;
+}
+
+
+
+
+
+#rank_upload_pick {
+    position: absolute;
+    width: 100% !important;
+    height: 100% !important;
+    left: 0px;
+    top: 0px;
+}
+
+#rank_upload_pick div,
+#rank_upload_pick input {
+    width: 100% !important;
+    height: 100% !important;
+    opacity: 0;
+    cursor: pointer;
+}
+
+#rank_upload_pick label {
+    display: none;
+}
+
+
+#previewBox img{
+    max-width: 100%;
+}

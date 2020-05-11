@@ -1,0 +1,119 @@
+/*这是重写的公共css*/
+.content-wrapper{
+	background-color: #fff;
+}
+.form-control{
+	
+}
+
+/*这是自定义的公共css*/
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+input[type="number"]{
+	-moz-appearance: textfield;
+}
+*{
+	list-style: none;
+	margin:0px;
+	padding:0px;
+}
+.list_title_header{
+	margin-bottom: 20px;
+}
+.status_down{
+	cursor: pointer;
+	color: #fe7353;
+}
+
+.status_delete{
+	cursor: pointer;
+	color: #039cf8;
+}
+
+.content-header>h4>i{
+	margin-right: 10px;
+}
+
+.info-text{
+	width: 80%;
+	margin: 0 !important;
+	float: left;
+}
+.info-time{
+	width: 20%;
+	float: right;
+	text-align: center;
+	margin: 0;
+}
+.info-read{
+	height: 20px;
+	display: block;
+	float: right;
+	cursor: pointer;
+	display: none;
+}
+.see-all{
+	text-align: right !important;
+	background-color: #f2f2f2 !important;
+	color: #727272 !important;
+}
+.menu li{
+	padding: 10px;
+}
+.menu li:hover .info-time{
+	display: none;
+}
+.menu li:hover .info-read{
+	display: block;
+}
+
+.pagination{
+	float: right;
+}
+
+.brand-intro{
+	max-width: 400px;
+	height: 120px !important;
+}
+.form-horizontal .label-wrapper {
+	display: table;
+	float: right;
+	min-height: 28px;
+}
+.form-horizontal .label-wrapper .control-label {
+	display: table-cell;
+}
+@media (max-width: 992px){
+.form-horizontal .label-wrapper {
+		float: none;
+		margin-bottom: 3px;
+		margin-top: 5px;
+}
+}
+.rule-detail{
+	max-width: 664px;
+	height: 200px !important;
+	font-size: 14px;
+}
+
+.main_list_content{
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 20px;
+}
+
+.dropdown-toggle{
+	padding: 14px 15px !important;
+}
+
+#edui1{
+	width: 100% !important;
+}
+#edui1_iframeholder{
+	width: 100% !important;
+}

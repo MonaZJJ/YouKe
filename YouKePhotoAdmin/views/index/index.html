@@ -1,0 +1,96 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}首页{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/index.css">
+<link rel="stylesheet" href="/public/plugins/daterangepicker/daterangepicker-bs3.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <!-- 总容器box -->
+            <div Id="indexBox">
+                <div class="head-list">
+                    <div class="ex_one">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <img style="height:58px;" src="/public/images/index_user.png" alt="">
+                                        <p class="txt_des">新增人数</p>
+                                        <p class="num_zong" id="NewUsers">0</p>
+                                        <span class="borderLine"></span>
+                                    </td>
+                                    <td>
+                                        <img style="height:58px;" src="/public/images/index_img.png" alt="">
+                                        <p class="txt_des">新增作品</p>
+                                        <p class="num_zong" id="NewWorks">0</p>
+                                        <span class="borderLine"></span>
+                                    </td>
+                                    <td>
+                                        <img style="height:58px;" src="/public/images/index_user.png" alt="">
+                                        <p class="txt_des">会员总数</p>
+                                        <p class="num_zong" id="TotalUsers">0</p>
+                                        <span class="borderLine"></span>
+                                    </td>
+                                    <td>
+                                        <img style="height:58px;" src="/public/images/index_img.png" alt="">
+                                        <p class="txt_des">总作品数</p>
+                                        <p class="num_zong" id="TotalWorks">0</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <ul id="myTab" class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#fitst" data-toggle="tab" data-type="1" style="border-radius: 10px 0px 0px 10px;">
+                            新增人数
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#second" data-toggle="tab" data-type="2" style="border-radius: 0;border-left:none;border-right:none;">
+                            当天上传作品
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#third" data-toggle="tab" data-type="3" style="border-radius:0 10px 10px 0;">
+                            注册用户
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="row">
+                    <div class="header_dv_box">
+
+                        <div class="trend_analyse_title" style="line-height: 32px;">
+                            新增用户数
+                        </div>
+                        <div id="reportrange2" class="btn" style="float:right; background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
+
+                            <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+
+                            <span></span>
+                        </div>
+                    </div>
+                    <div id="trend_analyse_box" style="width: 100%;height:400px;"></div>
+                </div>
+            </div>
+            <!-- 总容器box end -->
+        </div>
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/plugins/echarts/echarts.min.js"></script>
+<script src="/public/plugins/laydate/moment.js"></script>
+<script src="/public/plugins/daterangepicker/daterangepicker.js"></script>
+<script src="/public/js/index.js"></script>
+{{/block}}

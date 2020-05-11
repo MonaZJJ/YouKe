@@ -1,0 +1,98 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}权限设置{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/permissionsetting.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header">
+            <div class="head-type">
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a data-type="1" data-toggle="tab">管理</a>
+                    </li>
+                    <li>
+                        <a data-type="1" data-toggle="modal" href="#addDepartmentModal">添加</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="table_content_department">
+                <!--表格内容-->
+                <table id="departmentManage">
+
+                </table>
+                <!--表格内容end-->
+
+                <!--添加部门模态框-->
+                <div class="modal fade" id="addDepartmentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">添加部门</h4>
+                            </div>
+                            <div class="modal-body" style="width:452px;margin:auto">
+                                <div class="row form-group">
+                                    <label for="" style="width:80px;text-align: right">部门名称：</label>
+                                    <input type="text" class="form-control" id="departmentName" style="width:300px;display: inline-block">
+                                </div>
+                                <div class="row form-group">
+                                    <label for="" style="width:80px;text-align: right">职能说明：</label>
+                                    <input type="text" class="form-control" id="description" style="width:300px;display: inline-block">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                <button type="button" class="btn btn-primary" id="addDepartmentConfirm">确认</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--添加部门模态框end-->
+                <!--编辑部门模态框-->
+                <div class="modal fade" id="editDepartmentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">编辑部门</h4>
+                            </div>
+                            <div class="modal-body" style="width:452px;margin:auto">
+                                <div class="row form-group">
+                                    <label for="" style="width:80px;text-align: right">部门名称：</label>
+                                    <input type="text" class="form-control" id="editDepartmentName"
+                                           style="width:300px;display: inline-block;text-align:left ">
+                                </div>
+                                <div class="row form-group">
+                                    <label for="" style="width:80px;text-align: right">职能说明：</label>
+                                    <input type="text" class="form-control" id="editDescription"
+                                           style="width:300px;display: inline-block;text-align: left;">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                <button type="button" class="btn btn-primary" id="editDepartmentConfirm">确认</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--编辑部门模态框end-->
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+<script src="/public/js/permissionsetting.js"></script>
+{{/block}}

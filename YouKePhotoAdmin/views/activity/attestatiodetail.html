@@ -1,0 +1,133 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}作品审核{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+<link rel="stylesheet" href="/public/css/productionaudit.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs" id="State">
+                        <li class="active">
+                            <a data-type="0" data-toggle="tab" href="#first">作品审核</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <div>
+                        <div class="checkAll btn">
+                            <input type="checkbox" class="sel-all" id="selAll">
+                        </div>
+                        <button class="btn delete-btn" id="delete" data-toggle="modal"
+                            data-target="#addGrouping">审核</button>
+                        <div class="paginalNum">
+                            <span>每页显示数量：</span>
+                            <select name="pagesize_dropdown" id="pagesize_dropdown">
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="40">40</option>
+                                <option value="200">200</option>
+                                <option value="500">500</option>
+                                <option value="1000">1000</option>
+                                <option value="2000">2000</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <table id="productTable" class="table table-bordered table-striped">
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="ifSureSendModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <!--fade-->
+        <div class="modal-dialog" role="document" style="width:810px;margin: 100px auto;">
+            <div class="modal-content modal_bgc">
+                <div class="modal-header modal_header">
+                    <button type="button" class="close_modal btn" data-dismiss="modal" aria-label="Close">
+                        <span class="del_modal" aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel"></h4>
+                </div>
+                <div class="modal-body" style="margin:auto;min-height: 300px;text-align: center;">
+                    <span class="glyphicon glyphicon-chevron-left previous_page"
+                        style="color: #fff;font-size: 35px;margin: 0 30px 0 -30px;"></span>
+                    <img class="preview_img" src="" alt="">
+                    <span class="glyphicon glyphicon-chevron-right next_page"
+                        style="color: #fff;font-size: 35px;margin: 0 -30px 0 30px;"></span>
+                </div>
+                <div class="modal-footer modal_footer">
+                    <div style="margin-bottom:10px;height: 30px;">
+                        <div class="pull-left" style="color:#fff;"><span class="preview_span"></span> <a href="#"
+                                id="DownloadImg">点击下载</a>
+                            <span class='undateaudit' data-id='" + value + "' data-staut='1'
+                                style='margin-left: 10px;cursor: pointer;color: #3c8dbc;'>通过</span>
+                            <span class='undateaudit' data-id='" + value + "' data-staut='2'
+                                style='margin-left: 10px;cursor: pointer;color: #3c8dbc;'>拒绝</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="img_msg" style="word-wrap: break-word;word-break: normal;"></p>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+    </div>
+
+    <div>
+        <!-- 模态框（Modal） -->
+        <div class="modal fade" id="addGrouping" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title tag_title">批量审核</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="TabName" class="col-sm-2 control-label">状态</label>
+                                <div class="col-sm-5">
+                                    <select class="form-control" id="AuditList"
+                                        style="min-width: 145px;border:1px solid #d2d6de;">
+                                        <option value="1">通过</option>
+                                        <option value="2">拒绝</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" style="width:100px;" id="Batchreview">确认</button>
+                        <button class="btn btn-default" data-dismiss="modal" style="width:100px;">关闭</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal -->
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+<script src="/public/plugins/laydate/laydate.js"></script>
+<script src="/public/plugins/laydate/moment.js"></script>
+<script src="/public/js/productionaudit.js"></script>
+{{/block}}

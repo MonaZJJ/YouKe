@@ -1,0 +1,38 @@
+.content-wrapper{
+    background: #fff;
+}
+/*以下是公共样式*/
+.btn-primary {
+    background-color: #1792e7;
+    border-color: #1792e7;
+}
+#choice_condition_box label{
+    font-size: 12px;
+    padding-right: 0px !important;
+    font-weight: 500;
+}
+input,select{
+    border-radius: 4px !important;
+}
+/*以下是自己写的代码*/
+#table_header_classify {
+    overflow: hidden;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    background: #f8f8f8;
+    margin-top: 30px;
+}
+#table_content_classify>div {
+    padding: 12px 0px 12px;
+}
+.item-type-list {
+    overflow: hidden;
+    border-bottom: 1px solid #ddd;
+}
+.edit_classify, .edit_classify_one, .edit_classify_two, .edit_classify_three,.edit_dele_one,.power_a{
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 4px;
+    color: #1792e7;
+}

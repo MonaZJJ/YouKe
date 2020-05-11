@@ -1,0 +1,254 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}发布赛事{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+<link rel="stylesheet" href="/public/css/tutorialList.css">
+<link rel="stylesheet" href="/public/addtutorial.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs" id="State">
+                        <li>
+                            <a data-type="0" href="/activity/activityList">进行中</a>
+                        </li>
+                        <li>
+                            <a data-type="1" href="/activity/activityFinished">已结束</a>
+                        </li>
+                        <li class="active">
+                            <a data-type="2" href="#">发布赛事</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div>
+                        <ul>
+                            <li>
+                                <div class="box box-solid">
+
+                                    <div class="box-body">
+                                        <div class="form-box form-horizontal">
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label">
+                                                    比赛主题：</label>
+                                                <div class="col-md-4">
+                                                    <input type="text" class="form-control" id="Title" placeholder="赛事名称不能为空，长度限制在15个字符以内">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label">
+                                                    副主题：</label>
+                                                <div class="col-md-4">
+                                                    <input type="text" class="form-control" id="SmallTitle" placeholder="赛事名称不能为空，长度限制在20个字符以内">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group clearfix">
+                                                <label class="col-md-2 control-label">封面图：</label>
+                                                <div class="col-md-4">
+                                                    <div class="icon-box_about_classify">
+                                                        <div class="small_con">
+                                                            <img src="/public/images/addImg.png" alt="" id="small_icon"
+                                                                style="width: 100px;height: 100px">
+                                                            <div id="small_upload_pick" class="webuploader-container">
+                                                                <div class="webuploader-pick">
+                                                                    <div class="webuploader-pick"></div>
+                                                                    <div id="" style="position: absolute; top: 0px; left: 0px; overflow: hidden; bottom: auto; right: auto; width: 50px; height: 50px;">
+                                                                        <input type="file" name="file" class="webuploader-element-invisible"
+                                                                            multiple="multiple" accept="image/gif,image/jpg,image/jpeg,image/bmp,image/png">
+                                                                        <label style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label>
+                                                                    </div>
+                                                                </div>
+                                                                <div id="" style="position: absolute; top: 0px; left: 0px; overflow: hidden; bottom: auto; right: auto; width: 100px; height: 100px;"><input
+                                                                        type="file" name="file" class="webuploader-element-invisible"
+                                                                        multiple="multiple" accept="image/gif,image/jpg,image/jpeg,image/bmp,image/png"><label
+                                                                        style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div style="color: #ccc;margin-top: 8px">
+                                                        16:9
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group clearfix">
+                                                <label class="col-md-2 control-label">海报：</label>
+                                                <div class="col-md-9">
+                                                    <div class="icon-box_about_classify">
+                                                        <div class="small_con">
+                                                            <img src="/public/images/addImg.png" alt="" id="rank_icon"
+                                                                style="width: 100px;height: 100px">
+                                                            <div id="rank_upload_pick" class="webuploader-container">
+                                                                <div class="webuploader-pick"></div>
+                                                                <div style="position: absolute; top: 0px; left: 0px; overflow: hidden; bottom: auto; right: auto; width: 50px; height: 50px;">
+                                                                    <input type="file" name="file" class="webuploader-element-invisible"
+                                                                        multiple="multiple" accept="image/gif,image/jpg,image/jpeg,image/bmp,image/png">
+                                                                    <label style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <p class="img-message">600*620</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label">
+                                                    投稿开始时间：</label>
+                                                <div class="col-md-3 sale-state" id="State" style="height: 34px;">
+                                                    <label class="checkbox-inline">
+                                                        <input type="radio" name="state" value="1" checked="checked">
+                                                        立即开始
+                                                    </label>
+                                                    <label class="checkbox-inline">
+                                                        <input type="radio" name="state" value="2"> 指定开始时间
+                                                    </label>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <input type="text" class="form-control" style="display:none;"
+                                                        readonly="" id="start">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label">
+                                                    投稿结束时间：</label>
+                                                <div class="col-md-2">
+                                                    <input type="text" class="form-control" readonly="" id="end">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label">
+                                                    个人信息：</label>
+                                                <div class="col-md-4" id="type_box" style="height: 34px;">
+                                                    <label class="checkbox-inline">
+                                                        <input type="checkbox" class="checkbox_type" name="type_box"
+                                                            value="姓名" checked="checked"><span class="checkbox_name">姓名</span>
+                                                    </label>
+                                                    <label class="checkbox-inline">
+                                                        <input type="checkbox" class="checkbox_type" name="type_box"
+                                                            value="手机号码"><span class="checkbox_name">手机号码</span>
+                                                    </label>
+                                                    <label class="checkbox-inline">
+                                                        <input type="checkbox" class="checkbox_type" name="type_box"
+                                                            value="微信"><span class="checkbox_name">微信</span>
+                                                    </label>
+                                                    <label class="checkbox-inline">
+                                                        <input type="checkbox" class="checkbox_type" name="type_box"
+                                                            value="邮箱"><span class="checkbox_name">邮箱</span>
+                                                    </label>
+
+                                                </div>
+                                                <div class="col-md-2" style="height: 34px;">
+                                                    <div class="checkbox-inline" id="addOrderMsg" style="color:#1890ff;cursor: pointer;">
+                                                        添加其他额外信息
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="OrderMsgList">
+
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label">
+                                                    顺序：</label>
+                                                <div class="col-md-2">
+                                                    <input type="number" class="form-control" id="Sort" placeholder="0~255,最大的排在前面">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label">
+                                                    投稿次数：</label>
+                                                <div class="col-md-2">
+                                                    <input type="number" class="form-control" id="ContributeTotal"
+                                                        placeholder="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label">
+                                                    每组投稿次数：</label>
+                                                <div class="col-md-2">
+                                                    <input type="number" class="form-control" id="GroupContributeTotal"
+                                                        placeholder="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label">
+                                                    温馨提示：</label>
+                                                <div class="col-md-4">
+                                                    <textarea name="" class="form-control" id="FriendlyRemind" cols="60"
+                                                        rows="5"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group groupList">
+                                                <label class="col-md-2 control-label">
+                                                    分组列表：</label>
+                                                <div class="col-md-4 clearfix" id="GroupList" style="display:none;">
+                                                </div>
+                                                <div class="col-md-2" style="height: 34px;">
+                                                    <div class="checkbox-inline" id="addGroup" style="color:#1890ff;cursor: pointer;">
+                                                        添加分组
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label">活动描述：</label>
+                                                <div class="col-md-6">
+                                                    <script id="RuleContent" name="content" type="text/plain">
+                                                    </script>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="footer-btn">
+                        <button class="btn btn-primary" id="nextStep" style="width:120px;height:44px;margin-left: 210px;">完成</button>
+                        <button class="btn btn-default" data-toggle="modal" data-target="#mySmallModalLabel" id="preview"
+                            style="width:120px;height:44px;margin-left: 20px;">预览</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="modal fade bs-example-modal-sm" tabindex="-1" id="mySmallModalLabel" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content" style="border-radius: 30px;background:#fff url(/public/images/mobile_mldao.png);background-size: 100% 100%;height: 600px;padding: 80px 30px;">
+                <div style="overflow:hidden;">
+                    <div id="previewBox" style="overflow-x:hidden;overflow-y: scroll;margin-right: -20px;height: 440px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+<script src="/public/plugins/webuploader/webuploader.js"></script>
+<script src="/public/js/upload_icon_pic.js"></script>
+<script src="/public/plugins/laydate/laydate.js"></script>
+<script src="/public/plugins/laydate/moment.js"></script>
+<script src="/public/plugins/ueditor/ueditor.config.js"></script>
+<script src="/public/plugins/ueditor/ueditor.all.js"></script>
+<script src="/public/js/addactivity.js"></script>
+{{/block}}

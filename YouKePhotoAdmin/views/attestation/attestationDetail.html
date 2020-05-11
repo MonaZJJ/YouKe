@@ -1,0 +1,187 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}审核详情{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+<link rel="stylesheet" href="/public/css/productionDetail.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs" id="State">
+                        <li class="active">
+                            <a data-type="0" data-toggle="tab" href="#first">审核详情</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="option-list form-inline clearfix">
+                    <h2 class="info-title">
+                        <span class="info_to">
+                            <img src="../public/images/return.png" alt=""> 返回审核列表</span>
+                    </h2>
+                </div>
+
+            </div>
+            <div class="tab-content edit-content">
+                <div class="tab-pane active" id="first">
+                    <div>
+                        <ul>
+                            <li>
+                                <div class="box box-solid">
+                                    <div class="box-header">
+                                        <h3 class="box-title">
+                                            基本信息
+                                        </h3>
+                                        <div class="pull-right">
+                                            <button type="button" class="btn btn-sm pull-right btn-primary operate-btn"
+                                                data-widget="collapse">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="box-body">
+                                        <div class="form-box form-horizontal">
+                                            <div class="form-group">
+                                                <label class=" control-label" style="float:left;">
+                                                    真实姓名：</label>
+                                                <div class="col-md-4">
+                                                    <span class="form-control" id="RealName"></span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class=" control-label" style="float:left;">
+                                                    身份证号码：</label>
+                                                <div class="col-md-4">
+                                                    <span class="form-control" id="IdCardNumber"></span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class=" control-label" style="float:left;">
+                                                    手机号码：</label>
+                                                <div class="col-md-4">
+                                                    <span class="form-control" id="Mobile"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="box box-solid">
+                                    <div class="box-header">
+                                        <h3 class="box-title">
+                                            资料图片
+                                        </h3>
+                                        <div class="pull-right">
+                                            <button type="button" class="btn btn-sm pull-right btn-primary operate-btn"
+                                                data-widget="collapse">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="box-body">
+                                        <div class="form-box form-horizontal">
+                                            <div id="productionList" class="clearfix">
+                                                <div class="productionbox">
+                                                    <img id="Evidence" class="chairImg"  data-toggle="modal" data-target="#ifSureSendModal" src="" alt="资料图片" title="资料图片">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="box box-solid">
+                                    <div class="box-header">
+                                        <h3 class="box-title">
+                                            正面的身份证照片
+                                        </h3>
+                                        <div class="pull-right">
+                                            <button type="button" class="btn btn-sm pull-right btn-primary operate-btn"
+                                                data-widget="collapse">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="box-body">
+                                        <div class="form-box form-horizontal">
+                                            <div id="productionList" class="clearfix">
+                                                <div class="productionbox">
+                                                    <img id="IdCardFrontal" class="chairImg"  data-toggle="modal" data-target="#ifSureSendModal" src="" alt="正面的身份证照片" title="正面的身份证照片">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="box box-solid">
+                                    <div class="box-header">
+                                        <h3 class="box-title">
+                                            背面的身份证照片
+                                        </h3>
+                                        <div class="pull-right">
+                                            <button type="button" class="btn btn-sm pull-right btn-primary operate-btn"
+                                                data-widget="collapse">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="box-body">
+                                        <div class="form-box form-horizontal">
+                                            <div id="productionList" class="clearfix">
+                                                <div class="productionbox">
+                                                    <img id="IdCardRear" class="chairImg"  data-toggle="modal" data-target="#ifSureSendModal" src="" alt="背面的身份证照片" title="背面的身份证照片">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- 创建新分组end -->
+    <div class="modal fade" id="ifSureSendModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <!--fade-->
+        <div class="modal-dialog" role="document" style="width:810px;margin: 100px auto;">
+            <div class="modal-content modal_bgc">
+                <div class="modal-header modal_header">
+                    <button type="button" class="close_modal btn" data-dismiss="modal" aria-label="Close">
+                        <span class="del_modal" aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel"></h4>
+                </div>
+                <div class="modal-body" style="margin:auto;min-height: 300px;text-align: center;">
+                    <img class="preview_img" src="" alt="">
+                </div>
+                <div class="modal-footer modal_footer">
+                    <div class="pull-left" style="color:#fff;"><span class="preview_span"></span> <a href="#" id="DownloadImg">点击下载</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+<script src="/public/js/attestationDetail.js"></script>
+{{/block}}

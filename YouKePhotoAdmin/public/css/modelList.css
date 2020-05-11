@@ -1,0 +1,81 @@
+.footer-btn {
+    margin: 50px 0;
+}
+
+.list_title_header {}
+
+.head-type ul {
+    border-bottom: 1px solid #3C8CBC;
+    margin-bottom: 50px;
+}
+
+.head-type ul li a {
+    color: black;
+}
+
+.head-type ul .active a {
+    color: #ffffff !important;
+    background-color: #3C8CBC !important;
+}
+
+.option-list {
+    border-bottom: 1px solid #c5c5c5;
+    padding-bottom: 30px;
+}
+
+.option-list .form-group {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 100px;
+}
+
+.btn {
+    width: 100px;
+    height: 35px;
+    border-radius: 5px;
+}
+
+
+
+.tag_box {
+    float: left;
+    width: 89px;
+    height: 34px;
+    border-radius: 5px;
+    border: 1px solid rgba(151, 151, 151, 1);
+    text-align: center;
+    line-height: 34px;
+    margin-right: 10px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.close_tag {
+    position: absolute;
+    right: -7px;
+    top: -7px;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: #000;
+    color: #fff;
+    border-radius: 50%;
+    line-height: 15px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.add_tag_box {
+    float: left;
+    width: 83px;
+    height: 33px;
+    border-radius: 5px;
+    border: 1px dashed rgba(151, 151, 151, 1);
+    text-align: center;
+    line-height: 34px;
+    margin-right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}

@@ -1,0 +1,273 @@
+/*公共样式表*/
+
+#food_variety tr>td {
+    line-height: 80px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.editor_food_box>span {
+    padding: 0px 6px;
+}
+
+.list-img {
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+}
+
+.list-title th {
+    text-align: center;
+}
+
+.status_open {
+    cursor: pointer;
+    color: #039cf8;
+}
+
+.status_close {
+    cursor: pointer;
+    color: #039cf8;
+}
+
+.status_see {
+    cursor: pointer;
+    color: #039cf8;
+}
+
+.status_edit {
+    cursor: pointer;
+    color: #039cf8;
+}
+
+.status_num {
+    cursor: pointer;
+    color: #039cf8;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.status_reply {
+    cursor: pointer;
+    color: #039cf8;
+}
+
+.status_view {
+    cursor: pointer;
+    color: #039cf8;
+}
+
+.status_search {
+    cursor: pointer;
+    color: #039cf8;
+    margin-right: 20px;
+}
+
+.notif-list li {
+    border-bottom: 1px solid #eeeeee;
+}
+
+.notif-list li p {
+    height: 20px;
+}
+
+
+.not-markAll {
+    width: 100px;
+    height: 25px;
+    line-height: 25px;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    /*display: none;*/
+}
+
+.clearfix:after {
+    content: ".";
+    clear: both;
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden
+}
+
+.title-text {
+    float: left;
+    border-left: 6px solid #3c8cbc;
+    text-indent: 5px;
+}
+
+.back-btn {
+    background-color: #f2f2f2;
+    border: 1px solid #d0d1d1;
+    color: #666666;
+    margin-bottom: 15px;
+}
+
+.table-title {
+    border-top: 1px solid #d0d1d1;
+    padding-top: 20px;
+}
+
+.switch-box label {
+    color: #898989;
+    font-weight: normal;
+}
+
+.switch {
+    width: 60px;
+    height: 30px;
+    background-color: #898989;
+    border-radius: 30px;
+    position: relative;
+}
+
+.switch p {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.switch-on {
+    background-color: #1792e7;
+}
+
+.switch-on p {
+    left: 30px;
+}
+
+.switch-box label {
+    line-height: 30px;
+    vertical-align: top;
+}
+
+.switch-box .switch {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.red-star {
+    color: red;
+}
+
+.checkall {
+    padding: 6px 20px;
+    border: 1px solid #e8e8e8;
+    float: left;
+    margin-right: 20px;
+    border-radius: 3px;
+}
+
+.paginalNum {
+    float: right;
+}
+
+.paginalNum span {
+    display: block;
+    float: left;
+    font-size: 14px;
+    line-height: 32px;
+}
+
+#pagesize_dropdown {
+    background: #f9f9f9;
+    width: 60px;
+    height: 32px;
+    font-family: tahoma;
+    font-size: 14px;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    padding-left: 5px;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: url(/public/images/pagesize_dropdown.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: right center !important;
+}
+
+/*弹窗*/
+.mask {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(95, 95, 95, 0.7);
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.content-box {
+    width: 910px;
+    /*height: 560px;*/
+    background-color: #ffffff;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    padding-bottom: 150px;
+}
+
+.content-box h2 {
+    line-height: 55px;
+    font-size: 16px;
+    margin: 0;
+    padding-left: 20px;
+    border-bottom: 1px solid #a8a7a7;
+    background-color: #f6f6f6;
+}
+
+.close {
+    display: block;
+    height: 55px;
+    line-height: 55px;
+    font-size: 40px;
+    color: #282637;
+    position: absolute;
+    top: 0;
+    right: 30px;
+}
+
+.box-footer {
+    width: 100%;
+    height: 70px;
+    border-top: 1px solid #e8e8e8;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.pagination-detail {
+    display: none;
+}
+
+.img-message {
+    color: #aaaaaa;
+    margin-top: 10px;
+}
+
+
+
+.th-inner {
+    text-align: center;
+}
+
+
+.previous_page,
+.next_page {
+    cursor: pointer;
+    display: inline-block;
+    min-height: 300px;
+    line-height: 300px;
+    width: 10%;
+}

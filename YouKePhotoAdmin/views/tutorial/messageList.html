@@ -1,0 +1,120 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}留言列表{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+<link rel="stylesheet" href="/public/css/matchList.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs" id="State">
+                        <li class="active">
+                            <a data-type="0" data-toggle="tab" href="#first">留言列表</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="option-list form-inline clearfix">
+                    <h2 class="info-title">
+                        <span class="info_to">
+                            <img src="../public/images/return.png" alt=""> 返回教程列表</span>
+                    </h2>
+                </div>
+                <div>
+                    <div>
+                        <div class="checkAll btn">
+                            <input type="checkbox" class="sel-all" id="selAll">
+                        </div>
+                        <button class="btn delete-btn" id="delete">删除</button>
+                        <div class="paginalNum">
+                            <span>每页显示数量：</span>
+                            <select name="pagesize_dropdown" id="pagesize_dropdown">
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="40">40</option>
+                                <option value="200">200</option>
+                                <option value="500">500</option>
+                                <option value="1000">1000</option>
+                                <option value="2000">2000</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <table id="productTable" class="table table-bordered table-striped">
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 创建新分组start -->
+    <div>
+        <!-- 模态框（Modal） -->
+        <div class="modal fade" id="addGrouping" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">回复留言</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="TabName" class="col-sm-2 control-label">回复内容</label>
+                                <div class="col-sm-5">
+                                    <textarea class="form-control product-intro" id="Content" style="width:380px;height:80px;"></textarea>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" style="width:100px;" id="creatTabNameBtn">确认</button>
+                        <button class="btn btn-default" data-dismiss="modal" style="width:100px;">关闭</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal -->
+    </div>
+
+    <div>
+        <!-- 模态框（Modal） -->
+        <div class="modal fade" id="eidtGrouping" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">回复留言</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="TabName" class="col-sm-2 control-label">回复内容</label>
+                                <div class="col-sm-5">
+                                    <textarea disabled="disabled" class="form-control product-intro" id="Contentdetail" style="width:380px;height:80px;"></textarea>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal -->
+    </div>
+    <!-- 创建新分组end -->
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+<script src="/public/js/messageList.js"></script>
+{{/block}}

@@ -1,0 +1,29 @@
+.nav-tabs {
+    border-bottom: 1px solid #3C8CBC;
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+    color: #fff;
+    cursor: default;
+    background-color: #3C8CBC;
+    border-bottom-color: transparent;
+    border-radius: 10px 10px 0px 0px;
+}
+.nav-tabs>li>a {
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+}
+
+.nav-tabs > li > a:hover {
+    background-color: #fff;
+    border-color: transparent transparent #3C8CBC;
+}
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    color: #3f3f3f;
+}

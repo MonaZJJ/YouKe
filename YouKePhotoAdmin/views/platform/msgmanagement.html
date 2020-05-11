@@ -1,0 +1,127 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}消息管理{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+<link rel="stylesheet" href="/public/css/msgmanagement.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs" id="State">
+                        <li class="active">
+                            <a data-type="0" data-toggle="tab" href="#first">消息列表</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="option-list form-inline clearfix">
+
+                    <div class="form-group col-lg-1 col-sm-1" style="text-align:center;">
+                        <a class="btn btn-primary add_tag" data-toggle="modal" data-target="#ifSureSendModal" id="Addtag">添加消息</a>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <div class="checkAll btn">
+                            <input type="checkbox" class="sel-all" id="selAll">
+                        </div>
+                        <button class="btn delete-btn" id="delete">删除</button>
+                        <div class="paginalNum">
+                            <span>每页显示数量：</span>
+                            <select name="pagesize_dropdown" id="pagesize_dropdown">
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="40">40</option>
+                                <option value="200">200</option>
+                                <option value="500">500</option>
+                                <option value="1000">1000</option>
+                                <option value="2000">2000</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <table id="productTable" class="table table-bordered table-striped">
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="ifSureSendModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <!--fade-->
+        <div class="modal-dialog" role="document" style="width:810px;margin: 100px auto;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">消息发送</h4>
+                </div>
+                <div class="modal-body" style="margin:auto;padding-left: 100px;min-height: 300px;">
+                    <div class="form-group clearfix">
+                        <label class="col-md-2 control-label">消息标题：</label>
+                        <div class="col-md-4">
+                            <input type="text" placeholder="" class="form-control" id="MessageTitle" style="width:380px;display: inline-block">
+                        </div>
+                    </div>
+                    <div class="form-group clearfix">
+                        <label class="col-md-2 control-label">内容：</label>
+                        <div class="col-md-4">
+                            <textarea class="form-control product-intro" id="MessageContent" style="width:380px;height:80px;"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="send_if_confirm">确认</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="editifSureSendModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <!--fade-->
+        <div class="modal-dialog" role="document" style="width:810px;margin: 100px auto;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">消息详情</h4>
+                </div>
+                <div class="modal-body" style="margin:auto;padding-left: 100px;min-height: 300px;">
+                    <div class="form-group clearfix">
+                        <div class="col-md-4">
+                            <span id="editMessageTitle"></span>
+                        </div>
+                    </div>
+                    <div class="form-group clearfix">
+                        <div class="col-md-9">
+                            <div id="editMessageContent" style="width:100%;height:300px;background:rgba(232,232,232,1);padding:20px;">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+<script src="/public/js/msgmanagement.js"></script>
+{{/block}}

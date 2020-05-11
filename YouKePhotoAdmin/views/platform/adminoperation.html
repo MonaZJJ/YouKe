@@ -1,0 +1,114 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}} {{block 'title'}}管理员操作{{/block}} {{block 'head'}}
+<link rel="stylesheet" href="/public/css/jurisdiction_operation.css">
+<link rel="stylesheet" href="/public/plugins/iCheck/all.css">
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css"> {{/block}} {{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-type="1" data-toggle="tab" href="#manage">管理</a>
+                        </li>
+                        <li>
+                            <a data-type="2"  data-toggle="modal" href="#myModal">添加</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="manage">
+                        <div  class="operation_row">
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="col-md-2">
+                                        <div class="label-wrapper">
+                                            <label class="control-label">用户名：</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="text" autocomplete="off" class="form-control" id="manage_Name" placeholder="">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="label-wrapper">
+                                            <label class="control-label">所属部门： </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <select class="form-control select2 select2-hidden-accessible" id="departmentCate" tabindex="-1" aria-hidden="true">
+                                            <option selected="selected" value="-1">请选择部门</option>
+
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <a class="btn btn-primary" id="searchBtn">查询</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <table id="manageListTb" class="table table-hover table-striped">
+                        
+                        </table>
+
+                    </div>
+
+                    <!--添加模态框-->
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document" style="width:600px;">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <p class="modal-title" id="myModalLabel">添加用户</p>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="brand-list form-inline clearfix">
+                                            <div class="form-group">
+                                                <em style="color: red">*</em>
+                                                <label>用户名：</label>
+                                                <input type="text" class="form-input" id="yonghuName">
+                                            </div>
+                                            <div class="form-group">
+                                                <em style="color: red">*</em>
+                                                <label>密码：</label>
+                                                <input type="password" class="form-input" id="mima">
+                                            </div>
+                                            <div class="form-group">
+                                                <em style="color: red">*</em>
+                                                <label>确认密码：</label>
+                                                <input type="password" class="form-input" id="querenmima">
+                                            </div>
+                                            <div class="form-group">
+                                                <em style="color: red">*</em>
+                                                <label>所属部门：</label>
+                                                <select class="form-control" id="which_department" tabindex="-1" aria-hidden="true">
+                                                    <option selected="selected" value="">请选择部门</option>
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary" id="add_manage_confirm">添加</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <!--添加模态框 end-->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}} {{block 'footer'}} {{/block}} {{block 'requirejs'}}
+
+<script src="/public/js/jurisdictionOperation.js" type="text/babel"></script>
+<script src="/public/plugins/laydate/laydate.js"></script>
+<script src="/public/plugins/iCheck/icheck.min.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+{{/block}}

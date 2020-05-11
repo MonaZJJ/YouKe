@@ -1,0 +1,51 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}部门管理权限{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/department_power.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header">
+            <div class="head-type">
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a data-type="1" data-toggle="tab">部门权限</a>
+                    </li>
+                </ul>
+            </div>
+            <div style="margin-top: 20px">
+                <input type="checkbox" style="position: relative;top: 4px;" id="allSelect"><button class="btn" style="margin-left: 15px">全选</button>
+            </div>
+            <div id="table_header_classify">
+                <div class="col-xs-3">
+                    编号
+                </div>
+                <div class="col-xs-5">
+                    权限名称
+                </div>
+                <div class="col-xs-4">
+                    全选
+                </div>
+            </div>
+            <!--以下是内容表格-->
+            <div id="table_content_classify">
+                <ul class="layer_ul_1" id="departmentPermission">
+
+                </ul>
+            </div>
+            <!--以上是内容分表格-->
+            <div style="margin: 200px auto;width: 60px;height: 40px">
+                <button class="btn btn-primary" id="save">保存</button>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+{{/block}}
+{{block 'footer'}} {{/block}}
+{{block 'requirejs'}}
+<script src="/public/js/department_power.js" type="text/babel"></script>
+{{/block}}

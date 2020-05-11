@@ -1,0 +1,100 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}} {{block 'title'}}编辑{{/block}} {{block 'head'}}
+<link rel="stylesheet" href="/public/css/jurisdiction_edit.css">
+<link rel="stylesheet" href="/public/plugins/iCheck/all.css">
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css"> {{/block}} {{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-type="1" data-toggle="tab" href="#manage">基本信息</a>
+                        </li>
+                        <li>
+                            <a data-type="2" id="addBrand" data-toggle="tab" href="#add">修改密码</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="manage">
+                        <div class="edit_row">
+                            <div class="form-group edit_title">
+                                <label class="col-md-2 edit-label">
+                                    用户名：
+                                </label>
+                                <div class="col-md-3">
+                                    <span class="yonghuming"></span>
+                                </div>
+                            </div>
+                            <div class="form-group edit_title">
+                                <label class="col-md-2 edit-label">
+                                    <em>*</em>
+                                    所属部门:
+                                </label>
+                                <div class="col-md-3">
+                                    <select class="form-control select2 select2-hidden-accessible" id="deparments" tabindex="-1" aria-hidden="true">
+                                        <option value="">请选择相关部门</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group edit_title">
+                                <label class="col-md-2 edit-label">
+                                    <em>*</em>
+                                    注册日期:
+                                </label>
+                                <div class="col-md-3">
+                                    <span class="register_time"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="basicsetup-btn">
+                            <button class="btn btn-primary" id="saveBasic">保存</button>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="add">
+                        <div class="edit_row">
+                            <div class="form-group edit_title">
+                                <label class="col-md-2 edit-label">
+                                    用户名：
+                                </label>
+                                <div class="col-md-3">
+                                    <span class="yonghuming">admin</span>
+                                </div>
+                            </div>
+                            <div class="form-group edit_title">
+                                <label class="col-md-2 edit-label">
+                                    <em>*</em>
+                                    新密码:
+                                </label>
+                                <div class="col-md-3">
+                                        <input type="password" class="form-control" id="newPassword" placeholder="密码不能为空，长度在6-20个字符之间" lay-key="1">
+                                </div>
+                            </div>
+                            <div class="form-group edit_title">
+                                <label class="col-md-2 edit-label">
+                                    <em>*</em>
+                                    确认密码:
+                                </label>
+                                <div class="col-md-3">
+                                        <input type="password" class="form-control" id="surePassword" placeholder="请在输入密码" lay-key="1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="basicsetup-btn">
+                            <button class="btn btn-primary" id="savePassword">保存</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}} {{block 'footer'}} {{/block}} {{block 'requirejs'}}
+<script src="/public/plugins/laydate/laydate.js"></script>
+<script src="/public/plugins/iCheck/icheck.min.js"></script>
+<script src="/public/js/jurisdictionEdit.js" type="text/babel"></script>
+{{/block}}

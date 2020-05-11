@@ -1,0 +1,390 @@
+<!--模板页面.html-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{block 'title'}}玩转手机摄影后台{{/block}}</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="/public/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/public/bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- 阿里巴巴字体图标库 -->
+    <link rel="stylesheet" href="/public/Ali_fonts/iconfont.css">
+    <link rel="stylesheet" href="/public/plugins/sweetalert/sweetalert2.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="/public/bower_components/Ionicons/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/public/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="/public/dist/css/skins/skin-custom.css">
+    <!-- Google Font -->
+    <link rel="stylesheet" href="/public/css/googleapis-fonts/fonts.css">
+    <!-- 公有css -->
+    <link rel="stylesheet" href="/public/css/reset.css">
+    <link rel="stylesheet" href="/public/css/common.css">
+    <link rel="stylesheet" href="/public/css/nav.css">
+    <!-- 头部块 -->
+    {{block 'head'}}{{/block}}
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+
+    <div class="wrapper">
+
+        <!-- 头部导航开始 -->
+        <header class="main-header">
+            <a href="/" class="logo">
+                <span class="logo-mini">
+                    <b>摄影</b></span>
+                <span class="logo-lg">
+                    <b style="width: 100%;display: block;">
+                        <img src="/public/images/logo.png" alt="" style="height: 47px;">
+                    </b>
+                </span>
+            </a>
+            <nav class="navbar navbar-static-top" role="navigation">
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img id="userImg-small" src="/public/dist/img/user2-160x160.jpg" class="user-image" alt="头像">
+                                <span class="hidden-xs">玩转手机摄影</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="user-header">
+                                    <img id="userImg-big" src="/public/dist/img/user2-160x160.jpg" class="img-circle"
+                                        alt="头像">
+                                    <p id="username">Alexander Pierce - Web Developer
+                                        <small>Member since Nov. 2012</small>
+                                    </p>
+                                </li>
+                                <li class="user-footer">
+                                    <div class="pull-left hide">
+                                        <a href="#" class="btn btn-default btn-flat"></a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a id="logout" class="btn btn-default btn-flat">退出</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- 头部导航结束 -->
+
+        <!-- 左侧导航栏开始 -->
+        <aside class="main-sidebar">
+            <section class="sidebar">
+                <!-- <div class="user-panel">
+                    <div class="pull-left image">
+                        <img id="userImg-mid" src="/public/dist/img/user2-160x160.jpg" class="img-circle" alt="">
+                    </div>
+                    <div class="pull-left info">
+                        <p id="username-mid">这是昵称这是昵称</p>
+                    </div>
+                </div> -->
+                <ul class="sidebar-menu">
+                    <li class=" treeview {{currentUrl == '/' ? 'active': ''}}">
+                        <a href="/">
+                            <i class="glyphicon glyphicon-home"></i>
+                            <span>首页</span>
+                        </a>
+                    </li>
+
+                    <!-- 用户管理开始 -->
+                    <li class="treeview {{currentUrl.indexOf('/user/') > -1 ? 'active': ''}} hideClass">
+                        <a href="#">
+                            <i class="glyphicon glyphicon-user"></i>
+                            <span>用户管理</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="{{currentUrl == '/user/userList' ? 'active': ''}}">
+                                <a href="/user/userList">
+                                    <i class="fa fa-circle-o"></i>
+                                    <span>用户列表</span>
+                                </a>
+                            </li>
+                            <li class="{{currentUrl == '/user/userleaderboard' ? 'active': ''}}">
+                                <a href="/user/userleaderboard">
+                                    <i class="fa fa-circle-o"></i>
+                                    <span>排行榜</span>
+                                </a>
+                            </li>
+                            <li class="{{currentUrl == '/user/usersetting' ? 'active': ''}}">
+                                <a href="/user/usersetting">
+                                    <i class="fa fa-circle-o"></i>
+                                    <span>排行设置</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- 用户管理结束 -->
+
+                    <!-- 作品管理开始 -->
+                    <li class="treeview {{currentUrl.indexOf('/production/') > -1 ? 'active': ''}} hideClass">
+                        <a href="#">
+                            <i class="glyphicon glyphicon-picture"></i>
+                            <span>作品管理</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="{{currentUrl == '/production/productionList' ? 'active': ''}}">
+                                <a href="/production/productionList">
+                                    <i class="fa fa-circle-o"></i>
+                                    <span>作品列表</span>
+                                </a>
+                            </li>
+                            <li class="{{currentUrl == '/production/productionaudit' ? 'active': ''}}">
+                                <a href="/production/productionaudit">
+                                    <i class="fa fa-circle-o"></i>
+                                    <span>作品审核</span>
+                                </a>
+                            </li>
+                            <li class="{{currentUrl == '/production/auditsetting' ? 'active': ''}}">
+                                <a href="/production/auditsetting">
+                                    <i class="fa fa-circle-o"></i>
+                                    <span>审核设置</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- 作品管理结束 -->
+
+                    <!-- 认证管理开始 -->
+                    <li class="treeview {{currentUrl.indexOf('/attestation/') > -1 ? 'active': ''}} hideClass">
+                        <a href="#">
+                            <i class="glyphicon glyphicon-king"></i>
+                            <span>认证管理</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="{{currentUrl == '/attestation/attestationList' ? 'active': ''}}">
+                                <a href="/attestation/attestationList">
+                                    <i class="fa fa-circle-o"></i>
+                                    <span>摄影师审核列表</span>
+                                </a>
+                            </li>
+                            <li class="{{currentUrl == '/attestation/attestationsetting' ? 'active': ''}}">
+                                <a href="/attestation/attestationsetting">
+                                    <i class="fa fa-circle-o"></i>
+                                    <span>认证设置</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- 认证管理结束 -->
+
+                    <!-- 教程管理开始 -->
+                    <li class="treeview {{currentUrl.indexOf('/tutorial/') > -1 ? 'active': ''}} hideClass">
+                        <a href="#">
+                            <i class="glyphicon glyphicon-book"></i>
+                            <span>教程管理</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="{{currentUrl == '/tutorial/tutorialList' ? 'active': ''}}">
+                                <a href="/tutorial/tutorialList">
+                                    <i class="fa fa-circle-o"></i>
+                                    <span>教程列表</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- 教程管理结束 -->
+
+                    <!-- 机型管理开始 -->
+                    <!-- <li class="treeview {{currentUrl.indexOf('/model/') > -1 ? 'active': ''}} hideClass">
+                        <a href="#">
+                            <i class="glyphicon glyphicon-phone"></i>
+                            <span>机型管理</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="{{currentUrl == '/model' ? 'active': ''}}{{currentUrl == '/model/modelList' ? 'active': ''}}">
+                                <a href="/modelList">
+                                    <i class="fa fa-circle-o"></i>
+                                    <span>机型列表</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li> -->
+                    <!-- 机型管理结束 -->
+
+                    <!-- 活动管理开始 -->
+                    <li class="treeview {{currentUrl.indexOf('/activity/') > -1 ? 'active': ''}} hideClass">
+                        <a href="#">
+                            <i class="glyphicon glyphicon-flag"></i>
+                            <span>比赛管理</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="{{currentUrl == '/activity/activityList' ? 'active': ''}}">
+                                <a href="/activity/activityList">
+                                    <i class="fa fa-circle-o"></i>
+                                    <span>比赛列表</span>
+                                </a>
+                            </li>
+                            <li class="{{currentUrl == '/activity/activityStatistic' ? 'active': ''}}">
+                                <a href="/activity/activityStatistic">
+                                    <i class="fa fa-circle-o"></i>
+                                    <span>活动统计</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- 活动管理结束 -->
+
+                    <!-- 标签管理开始 -->
+                    <li class="treeview {{currentUrl.indexOf('/label/') > -1 ? 'active': ''}} hideClass">
+                        <a href="#">
+                            <i class="glyphicon glyphicon-tags"></i>
+                            <span>标签管理</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="{{currentUrl == '/label/labelList' ? 'active': ''}}">
+                                <a href="/label/labelList">
+                                    <i class="fa fa-circle-o"></i>
+                                    <span>标签列表</span>
+                                </a>
+                            </li>
+                            <li class="{{currentUrl == '/label/modelList' ? 'active': ''}}">
+                                <a href="/label/modelList">
+                                    <i class="fa fa-circle-o"></i>
+                                    <span>机型列表</span>
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    <!-- 标签管理结束 -->
+
+                    <!-- 平台管理开始 -->
+                    <li class="treeview {{currentUrl.indexOf('/platform/') > -1 ? 'active': ''}} hideClass">
+                        <a href="#">
+                            <i class="glyphicon glyphicon-asterisk"></i>
+                            <span>平台管理</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="{{currentUrl == '/platform/msgmanagement' ? 'active': ''}}">
+                                <a href="/platform/msgmanagement">
+                                    <i class="fa fa-circle-o"></i>
+                                    <span>消息管理</span>
+                                </a>
+                            </li>
+                            <li class="{{currentUrl == '/platform/sitesetting' ? 'active': ''}}">
+                                <a href="/platform/sitesetting">
+                                    <i class="fa fa-circle-o"></i>
+                                    <span>站点设置</span>
+                                </a>
+                            </li>
+                            <li class="{{currentUrl == '/platform/permissionsetting' ? 'active': ''}}">
+                                <a href="/platform/permissionsetting">
+                                    <i class="fa fa-circle-o"></i>
+                                    <span>部门管理</span>
+                                </a>
+                            </li>
+                            <li class="{{currentUrl == '/platform/adminoperation' ? 'active': ''}}">
+                                <a href="/platform/adminoperation">
+                                    <i class="fa fa-circle-o"></i>
+                                    <span>管理员操作</span>
+                                </a>
+                            </li>
+                            <li class="{{currentUrl == '/platform/systemlog' ? 'active': ''}}">
+                                <a href="/platform/systemlog">
+                                    <i class="fa fa-circle-o"></i>
+                                    <span>操作日志</span>
+                                </a>
+                            </li>
+                            <li class="{{currentUrl == '/platform/bannermanagement' ? 'active': ''}}">
+                                <a href="/platform/bannermanagement">
+                                    <i class="fa fa-circle-o"></i>
+                                    <span>banner图管理</span>
+                                </a>
+                            </li>
+                            <li class="{{currentUrl == '/platform/password' ? 'active': ''}}">
+                                <a href="/platform/password">
+                                    <i class="fa fa-circle-o"></i>
+                                    <span>修改账号密码</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- 平台管理结束 -->
+
+                </ul>
+            </section>
+        </aside>
+        <!-- 左侧导航栏结束 -->
+
+        <!-- 内容区域开始 -->
+        <div class="content-wrapper">
+            {{block 'content'}}{{/block}}
+        </div>
+        <!-- 内容区域结束 -->
+
+        <footer class="main-footer">
+            {{block 'footer'}}{{/block}}
+        </footer>
+        <!-- 底部区域结束 -->
+    </div>
+
+    <!-- REQUIRED JS SCRIPTS -->
+    <!--兼容ES6-->
+    <script src="/public/plugins/babel-core/browser.min.js"></script>
+
+    <!-- jQuery 3 -->
+    <script src="/public/bower_components/jquery/dist/jquery.min.js"></script>
+    <script>
+        if (localStorage.getItem("IsStoreManager") == "true") {
+            $('.hideClass').hide();
+        }
+    </script>
+    <script src="/public/js/jquery.md5.js"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="/public/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- 分页插件 -->
+    <script src="/public/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="/public/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="/public/dist/js/adminlte.min.js"></script>
+    <script src="/public/dist/js/app.min.js"></script>
+    <script src="/public/plugins/layer/layer.js"></script>
+    <script src="/public/plugins/sweetalert/sweetalert2.min.js"></script>
+    <script src="/public/js/core.js"></script>
+    <script src="/public/js/template.js"></script>
+    <script src="/public/js/common.js"></script>
+    <script src="/public/js/validate.js"></script>
+    <script src="/public/js/layout.js"></script>
+    <script src="/public/js/signrequest.js"></script>
+    <!-- 底部js块 -->
+    {{block 'requirejs'}} {{/block}}
+</body>
+
+</html>

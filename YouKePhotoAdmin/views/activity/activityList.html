@@ -1,0 +1,62 @@
+<!--dishes_list.html-->
+{{extend '../share/layout.html'}}
+{{block 'title'}}比赛列表{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/plugins/bootstrap-table/bootstrap-table.css">
+<link rel="stylesheet" href="/public/css/activityList.css">
+{{/block}}
+{{block 'content'}}
+<section class="content container-fluid" id="all_box">
+    <div class="main_list_content type_box">
+        <div class="list_title_header" style="float:left;width:100%">
+            <div class="">
+                <div class="head-type">
+                    <ul class="nav nav-tabs" id="State">
+                        <li class="active">
+                            <a data-type="0" href="#first">进行中</a>
+                        </li>
+                        <li>
+                            <a data-type="1"  href="/activity/activityFinished">已结束</a>
+                        </li>
+                        <li>
+                            <a data-type="2"  href="/activity/addactivity">发布比赛</a>
+                        </li>
+                    </ul>
+                </div>
+               
+                <div>
+                    <div>
+                        <div class="paginalNum" style="margin-bottom: 30px;">
+                            <span>每页显示数量：</span>
+                            <select name="pagesize_dropdown" id="pagesize_dropdown">
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="40">40</option>
+                                <option value="200">200</option>
+                                <option value="500">500</option>
+                                <option value="1000">1000</option>
+                                <option value="2000">2000</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <table id="productTable" class="table table-bordered table-striped">
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{/block}}
+
+{{block 'footer'}}
+
+{{/block}}
+
+{{block 'requirejs'}}
+<script src="/public/plugins/bootstrap-table/bootstrap-table.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/public/plugins/bootstrap-table/bootstrap-table-export.js"></script>
+<script src="/public/js/activityList.js"></script>
+{{/block}}

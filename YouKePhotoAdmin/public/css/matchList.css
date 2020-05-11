@@ -1,0 +1,126 @@
+.content {
+    background-color: #ffffff;
+    padding-top: 30px;
+    margin-left: 20px;
+}
+
+.list_title_header {}
+
+.head-type ul {
+    border-bottom: 1px solid #3C8CBC;
+}
+
+.head-type ul li a {
+    color: black;
+}
+
+.head-type ul .active a {
+    color: #ffffff !important;
+    background-color: #3C8CBC !important;
+}
+
+.option-list {
+    border-bottom: 1px solid #c5c5c5;
+}
+
+.option-list .form-group {
+    margin-top: 20px;
+}
+
+.delete-btn {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.operate-box {
+    padding: 30px 0 20px 0;
+}
+
+.operate-box p {
+    height: 30px;
+    line-height: 30px;
+    color: #898989;
+}
+
+.operate-box .btn {
+    float: left;
+    height: 30px;
+    margin-left: 15px;
+}
+
+.right-label {
+    text-align: left !important;
+}
+
+.switch-text {
+    padding-top: 0 !important;
+    font-weight: bold !important;
+}
+
+.finish {
+    margin-top: 40px;
+}
+
+.sel-all {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.paginalNum {
+    margin-top: 30px;
+}
+
+.order-disp {
+    display: inline-block;
+    padding: 0px 10px;
+    border: 1px solid #ccc;
+    line-height: 35px;
+    border-radius: 5px;
+    width: 50px;
+    text-align: center;
+    min-height: 38px;
+}
+
+.brandImg {
+    width: 45px;
+    height: 45px;
+}
+
+.dec {
+    margin-top: 4px;
+}
+
+
+.table-bordered {
+    border: none;
+}
+
+.checkAll {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border:1px solid #ebebeb;
+    background: #f9f9f9;
+    text-align: center;
+    margin-right: 20px !important;
+}
+
+.checkAll input {
+    margin: 0;
+}
+
+
+.info-title {
+    height: 37px;
+    line-height: 37px;
+    padding-left: 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    cursor: pointer;
+    display: inline-block;
+}
+.info_to img{
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+}

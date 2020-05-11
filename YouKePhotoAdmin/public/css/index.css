@@ -1,0 +1,256 @@
+.info-box {
+    /*max-width: 350px;*/
+    height: 120px;
+    border-radius: 6px;
+    background-color: #ffffff;
+}
+
+.info-img {
+    display: inline-block;
+    vertical-align: top;
+    width: 75px;
+    height: 85px;
+    margin: 17px;
+}
+
+.text-box {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.amount-num {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 25px;
+}
+
+.amount-text {
+    font-size: 16px;
+    color: #666666;
+}
+
+.count-part {
+    background-color: #ffffff;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.count-part ul {
+    margin: 30px 0;
+}
+
+.count-part ul li {
+    /*max-width: 245px;*/
+    text-align: center;
+    height: 100px;
+    border-right: 1px solid #e8e8e8;
+}
+
+.count-part ul li:last-child {
+    border-right: none;
+}
+
+
+.count-img {
+    width: 30px;
+    height: 34px;
+    display: block;
+    margin: 0 auto;
+}
+
+.count-text {
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+.count-num {
+    font-size: 30px;
+    font-weight: bold;
+    color: #64a0ff;
+    margin: 0;
+    margin-top: 5px;
+}
+
+.compare-part ul li {
+    background-color: #ffffff;
+    border-radius: 6px;
+    height: 45px;
+    margin-top: 12px;
+    padding-top: 10px;
+}
+
+.compare-part ul li:first-child {
+    margin-top: 0;
+}
+
+.compare-text {
+    float: left;
+    line-height: 25px;
+    font-size: 14px;
+    color: #666666;
+    margin-left: 10px;
+}
+
+.compare-num {
+    float: right;
+    line-height: 25px;
+    margin-right: 30px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.chart-box {
+    margin-top: 70px;
+    padding: 0 60px;
+}
+
+.chart-part {
+    background-color: #ffffff;
+    border-radius: 6px;
+    padding-bottom: 40px;
+    margin-right: 15px;
+}
+
+.chart-type li a {
+    color: #666666;
+}
+
+.chart-type .active a {
+    border: none !important;
+    border-bottom: 2px solid #206ed0 !important;
+}
+
+.subChart-type {
+    border-bottom: none;
+}
+
+.subChart-type li {
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+.subChart-type li a {
+    height: 30px;
+    background-color: #d9d9d9;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 0 10px;
+    line-height: 30px;
+    color: #3f3f3f;
+}
+
+.subChart-type .active a {
+    border: none !important;
+    background-color: #216fac !important;
+    color: #ffffff !important;
+}
+
+.time-input {
+    padding: 0;
+}
+
+.total-count {
+    color: #ff6565;
+}
+
+
+
+
+
+
+
+
+.table {
+    border-radius: 2px;
+    border: 2px solid rgba(151, 151, 151, 1);
+}
+
+.table>tbody>tr>td {
+    border: none;
+    text-align: center;
+    /* border-right:1px solid #dfdfdf;  */
+}
+
+.table tr>td .txt_des {
+    padding-top: 10px;
+    font-weight: bold;
+}
+
+.table tr>td .iconfont {
+    color: #62ab3e;
+}
+
+.table tr>td {
+    position: relative;
+}
+
+.table .borderLine {
+    width: 3px;
+    height: 122px;
+    border: 1px solid rgba(194, 194, 194, 1);
+    background: rgba(194, 194, 194, 1);
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -61px;
+}
+
+.num_zong {
+    font-size: 30px;
+    color: rgba(100, 160, 255, 1);
+    line-height: 24px;
+    margin: 0;
+}
+
+.nav-tabs {
+    border: none;
+    width: 290px;
+    height: 41px;
+    line-height: 41px;
+    border-radius: 10px;
+}
+
+
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:hover,
+.nav-tabs>li.active>a:focus {
+    background: rgba(100, 160, 255, 1);
+    border: 1px solid rgba(151, 151, 151, 1);
+}
+
+.nav-tabs>li>a,
+.nav-tabs>li>a:hover,
+.nav-tabs>li>a:focus {
+    border: 1px solid rgba(151, 151, 151, 1);
+    margin: 0;
+}
+
+
+
+.header_dv_box{
+    margin-top: 40px;
+    position:relative;
+    overflow: hidden;
+    background-color: #f4f4f8;
+    padding: 10px 20px;
+}
+#reportrange2{
+    margin-right: 30px;
+   
+}
+.dropdown-menu{
+    right:30 !important;
+}
+.daterangepicker{
+    
+    left:auto;
+}
+.trend_analyse_title{
+    float: left;
+}
+#reportrange2>span,#accept_type>span,#send_type>span{
+    font-size: 12px;
+}
